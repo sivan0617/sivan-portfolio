@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import { Link } from "react-router-dom";
 import type { SiteCopy } from "../content";
 
 interface WorkSectionProps {
@@ -19,6 +20,7 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${100 - panelWidth}%`]);
+  const MotionLink = motion.create(Link);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const nextIndex = Math.min(projectCount - 1, Math.floor(latest * projectCount));
@@ -65,8 +67,8 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
               </div>
 
               <div className="max-w-[100rem] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center relative z-10">
-                <motion.a
-                  href={`/work/${project.slug}`}
+                <MotionLink
+                  to={`/work/${project.slug}`}
                   initial={{ opacity: 0, scale: 0.95, x: 100 }}
                   whileInView={{ opacity: 1, scale: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
@@ -87,7 +89,7 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
                   <div className="absolute bottom-10 left-10 font-mono text-[6px] tracking-[0.5em] text-white/20 uppercase z-20">
                     {copy.sequenceFrame} // {project.year} // {copy.streamId}_{index + 44}
                   </div>
-                </motion.a>
+                </MotionLink>
 
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -114,7 +116,7 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
                     {project.description}
                   </p>
 
-                  <a href={`/work/${project.slug}`} className="flex items-center gap-8 group cursor-pointer">
+                  <Link to={`/work/${project.slug}`} className="flex items-center gap-8 group cursor-pointer">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center group-hover:border-accent-blue transition-colors duration-500"
@@ -122,7 +124,7 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
                       <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse" />
                     </motion.div>
                     <span className="font-mono text-[9px] uppercase tracking-[0.4em] group-hover:text-accent-blue transition-colors">{copy.launch}</span>
-                  </a>
+                  </Link>
                 </motion.div>
               </div>
 
