@@ -97,6 +97,8 @@ export interface SiteCopy {
   ornament: string;
 }
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export const siteContent: Record<Locale, SiteCopy> = {
   zh: {
     meta: {
@@ -162,11 +164,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "以矿物感与冷白材质为线索完成的一组品牌视觉表达，强调产品气质、人物肖像与细节质感的统一。",
-          image: "/portfolio/kuang-front.jpg",
+          image: asset("/portfolio/kuang-front.jpg"),
           gallery: [
-            "/portfolio/kuang-front.jpg",
-            "/portfolio/kuang-profile.jpg",
-            "/portfolio/kuang-detail.png",
+            asset("/portfolio/kuang-front.jpg"),
+            asset("/portfolio/kuang-profile.jpg"),
+            asset("/portfolio/kuang-detail.png"),
           ],
         },
         {
@@ -177,11 +179,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "以藏地服饰、风、山体与仪式感为核心元素的一组 AIGC 影像实验，重点探索人物造型、环境尺度和情绪流动。",
-          image: "/portfolio/mthayas-cover.jpg",
+          image: asset("/portfolio/mthayas-cover.jpg"),
           gallery: [
-            "/portfolio/mthayas-cover.jpg",
-            "/portfolio/mthayas-lake.jpeg",
-            "/portfolio/mthayas-walk.jpeg",
+            asset("/portfolio/mthayas-cover.jpg"),
+            asset("/portfolio/mthayas-lake.jpeg"),
+            asset("/portfolio/mthayas-walk.jpeg"),
           ],
         },
         {
@@ -192,12 +194,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "围绕赛博、监控、故障和高对比排版做的一组概念海报练习，偏重图像气氛、冲突色和彩噪信息层。",
-          image: "/portfolio/poster-y2k-cyber.png",
+          image: asset("/portfolio/poster-y2k-cyber.png"),
           gallery: [
-            "/portfolio/poster-y2k-cyber.png",
-            "/portfolio/poster-surveillance-cyber.jpeg",
-            "/portfolio/poster-glitch-portrait.png",
-            "/portfolio/poster-focus.jpeg",
+            asset("/portfolio/poster-y2k-cyber.png"),
+            asset("/portfolio/poster-surveillance-cyber.jpeg"),
+            asset("/portfolio/poster-glitch-portrait.png"),
+            asset("/portfolio/poster-focus.jpeg"),
           ],
         },
         {
@@ -208,12 +210,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "以草莓、蓝莓、西瓜、菠萝等口味为主题的一组饮品海报，重点处理产品质感、清爽氛围和商业画面完成度。",
-          image: "/portfolio/poster-strawberry-soda.png",
+          image: asset("/portfolio/poster-strawberry-soda.png"),
           gallery: [
-            "/portfolio/poster-strawberry-soda.png",
-            "/portfolio/poster-blueberry-soda.png",
-            "/portfolio/poster-watermelon-soda.png",
-            "/portfolio/poster-pineapple-soda.png",
+            asset("/portfolio/poster-strawberry-soda.png"),
+            asset("/portfolio/poster-blueberry-soda.png"),
+            asset("/portfolio/poster-watermelon-soda.png"),
+            asset("/portfolio/poster-pineapple-soda.png"),
           ],
         },
         {
@@ -224,10 +226,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "用强字重与工业摄影构建的一张主题海报，强调年代感、结构感和工业视觉叙事的力量。",
-          image: "/portfolio/poster-jiangnan-shipyard.png",
+          image: asset("/portfolio/poster-jiangnan-shipyard.png"),
           gallery: [
-            "/portfolio/poster-jiangnan-shipyard.png",
-            "/portfolio/poster-jiangnan-shipyard.png",
+            asset("/portfolio/poster-jiangnan-shipyard.png"),
+            asset("/portfolio/poster-jiangnan-shipyard.png"),
           ],
         },
         {
@@ -238,12 +240,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "从零散视频目录里筛出的几段视觉实验，包含站台空间、天穹场景、赛博街景与科幻城市氛围。",
-          image: "/portfolio/video-station-cover.png",
+          image: asset("/portfolio/video-station-cover.png"),
           gallery: [
-            "/portfolio/video-station-cover.png",
-            "/portfolio/video-celestial-cover.png",
-            "/portfolio/video-cyber-girl-cover.png",
-            "/portfolio/video-sci-fi-city.jpeg",
+            asset("/portfolio/video-station-cover.png"),
+            asset("/portfolio/video-celestial-cover.png"),
+            asset("/portfolio/video-cyber-girl-cover.png"),
+            asset("/portfolio/video-sci-fi-city.jpeg"),
           ],
         },
         {
@@ -254,17 +256,17 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "以第一视角飞船起飞为主题的短视频概念，画面重点放在城市层级、飞行载具与赛博氛围的快速建立。",
-          image: "/portfolio/video-starship-pov-cover.png",
+          image: asset("/portfolio/video-starship-pov-cover.png"),
           gallery: [
-            "/portfolio/video-starship-pov-cover.png",
-            "/portfolio/video-sci-fi-city.jpeg",
-            "/portfolio/video-station-cover.png",
+            asset("/portfolio/video-starship-pov-cover.png"),
+            asset("/portfolio/video-sci-fi-city.jpeg"),
+            asset("/portfolio/video-station-cover.png"),
           ],
         },
       ],
     },
     about: {
-      portraitImage: "/portfolio/about-signal.jpeg",
+      portraitImage: asset("/portfolio/about-signal.jpeg"),
       portraitAlt: "姚茜文作品图像",
       sideLabel: "视觉档案_01 // 2026 归档",
       eyebrow: "// 视觉设计师 / AIGC 创作者",
@@ -374,11 +376,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "A brand image series shaped by mineral forms, cool light, and material detail, balancing product mood, portrait styling, and surface texture.",
-          image: "/portfolio/kuang-front.jpg",
+          image: asset("/portfolio/kuang-front.jpg"),
           gallery: [
-            "/portfolio/kuang-front.jpg",
-            "/portfolio/kuang-profile.jpg",
-            "/portfolio/kuang-detail.png",
+            asset("/portfolio/kuang-front.jpg"),
+            asset("/portfolio/kuang-profile.jpg"),
+            asset("/portfolio/kuang-detail.png"),
           ],
         },
         {
@@ -389,11 +391,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "An AIGC image and film experiment built around Tibetan costume, wind, mountains, and ritual atmosphere, focused on scale, styling, and emotional flow.",
-          image: "/portfolio/mthayas-cover.jpg",
+          image: asset("/portfolio/mthayas-cover.jpg"),
           gallery: [
-            "/portfolio/mthayas-cover.jpg",
-            "/portfolio/mthayas-lake.jpeg",
-            "/portfolio/mthayas-walk.jpeg",
+            asset("/portfolio/mthayas-cover.jpg"),
+            asset("/portfolio/mthayas-lake.jpeg"),
+            asset("/portfolio/mthayas-walk.jpeg"),
           ],
         },
         {
@@ -404,12 +406,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A poster set built around cyber themes, surveillance UI, glitch overlays, and high-contrast typography, with a focus on mood and visual noise.",
-          image: "/portfolio/poster-y2k-cyber.png",
+          image: asset("/portfolio/poster-y2k-cyber.png"),
           gallery: [
-            "/portfolio/poster-y2k-cyber.png",
-            "/portfolio/poster-surveillance-cyber.jpeg",
-            "/portfolio/poster-glitch-portrait.png",
-            "/portfolio/poster-focus.jpeg",
+            asset("/portfolio/poster-y2k-cyber.png"),
+            asset("/portfolio/poster-surveillance-cyber.jpeg"),
+            asset("/portfolio/poster-glitch-portrait.png"),
+            asset("/portfolio/poster-focus.jpeg"),
           ],
         },
         {
@@ -420,12 +422,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A set of drink posters built around strawberry, blueberry, watermelon, and pineapple flavors, focused on material freshness and polished commercial presentation.",
-          image: "/portfolio/poster-strawberry-soda.png",
+          image: asset("/portfolio/poster-strawberry-soda.png"),
           gallery: [
-            "/portfolio/poster-strawberry-soda.png",
-            "/portfolio/poster-blueberry-soda.png",
-            "/portfolio/poster-watermelon-soda.png",
-            "/portfolio/poster-pineapple-soda.png",
+            asset("/portfolio/poster-strawberry-soda.png"),
+            asset("/portfolio/poster-blueberry-soda.png"),
+            asset("/portfolio/poster-watermelon-soda.png"),
+            asset("/portfolio/poster-pineapple-soda.png"),
           ],
         },
         {
@@ -436,10 +438,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A single industrial poster driven by heavy typography and documentary-style photography, built to carry scale, structure, and historical mood.",
-          image: "/portfolio/poster-jiangnan-shipyard.png",
+          image: asset("/portfolio/poster-jiangnan-shipyard.png"),
           gallery: [
-            "/portfolio/poster-jiangnan-shipyard.png",
-            "/portfolio/poster-jiangnan-shipyard.png",
+            asset("/portfolio/poster-jiangnan-shipyard.png"),
+            asset("/portfolio/poster-jiangnan-shipyard.png"),
           ],
         },
         {
@@ -450,12 +452,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A selection of video studies pulled from the loose video folder, spanning station spaces, celestial scenes, cyber streets, and sci-fi city moods.",
-          image: "/portfolio/video-station-cover.png",
+          image: asset("/portfolio/video-station-cover.png"),
           gallery: [
-            "/portfolio/video-station-cover.png",
-            "/portfolio/video-celestial-cover.png",
-            "/portfolio/video-cyber-girl-cover.png",
-            "/portfolio/video-sci-fi-city.jpeg",
+            asset("/portfolio/video-station-cover.png"),
+            asset("/portfolio/video-celestial-cover.png"),
+            asset("/portfolio/video-cyber-girl-cover.png"),
+            asset("/portfolio/video-sci-fi-city.jpeg"),
           ],
         },
         {
@@ -466,17 +468,17 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A short POV concept centered on a cyberpunk starship launch, focused on fast worldbuilding through vehicles, city scale, and airborne motion.",
-          image: "/portfolio/video-starship-pov-cover.png",
+          image: asset("/portfolio/video-starship-pov-cover.png"),
           gallery: [
-            "/portfolio/video-starship-pov-cover.png",
-            "/portfolio/video-sci-fi-city.jpeg",
-            "/portfolio/video-station-cover.png",
+            asset("/portfolio/video-starship-pov-cover.png"),
+            asset("/portfolio/video-sci-fi-city.jpeg"),
+            asset("/portfolio/video-station-cover.png"),
           ],
         },
       ],
     },
     about: {
-      portraitImage: "/portfolio/about-signal.jpeg",
+      portraitImage: asset("/portfolio/about-signal.jpeg"),
       portraitAlt: "Selected work image by Yaoxiwen",
       sideLabel: "VISUAL_ARCHIVE_01 // 2026",
       eyebrow: "// VISUAL DESIGNER / AIGC CREATOR",
