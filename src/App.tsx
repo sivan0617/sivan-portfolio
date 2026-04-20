@@ -34,7 +34,7 @@ const hasSeenBoot = () => {
 
 export default function App() {
   const location = useLocation();
-  const [isLoaded, setIsLoaded] = useState(hasSeenBoot);
+  const [isLoaded, setIsLoaded] = useState(() => hasSeenBoot() || location.pathname !== "/");
   const [locale, setLocale] = useState<Locale>(readLocale);
   const copy = useMemo(() => siteContent[locale], [locale]);
 

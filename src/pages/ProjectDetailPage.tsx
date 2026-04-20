@@ -32,8 +32,14 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
   const projectIndex = copy.work.projects.findIndex((entry) => entry.slug === project.slug);
   const previousProject = copy.work.projects[(projectIndex - 1 + copy.work.projects.length) % copy.work.projects.length];
   const nextProject = copy.work.projects[(projectIndex + 1) % copy.work.projects.length];
-  const gallery = project.gallery && project.gallery.length > 0 ? project.gallery : [project.image];
-  const galleryFrames = gallery.length > 1 ? gallery.slice(1) : [project.image, project.image];
+  const heroImage = project.gallery?.[0] ?? project.image;
+  const galleryFrames = project.video
+    ? project.gallery && project.gallery.length > 0
+      ? project.gallery
+      : [project.image]
+    : project.gallery && project.gallery.length > 1
+      ? project.gallery.slice(1)
+      : [];
 
   return (
     <PageTransitionShell className="relative min-h-screen px-6 pt-32 pb-24">
@@ -61,12 +67,23 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
 
         <RevealBlock>
           <div className="relative overflow-hidden rounded-[2px] bg-black os-panel-shadow">
-            <img
-              src={gallery[0]}
-              alt={project.title}
-              className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
-            />
-            <div className="absolute inset-0 bg-black/10" />
+            {project.video ? (
+              <video
+                src={project.video}
+                poster={project.image}
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+              />
+            ) : (
+              <img
+                src={heroImage}
+                alt={project.title}
+                className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+              />
+            )}
+            <div className="absolute inset-0 bg-black/10 pointer-events-none" />
             <div className="absolute bottom-8 left-8 font-mono text-[8px] uppercase tracking-[0.45em] text-white/35">
               {copy.work.sequenceFrame} // {project.year}
             </div>
@@ -84,20 +101,22 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
             </div>
           </RevealBlock>
 
-          <RevealBlock className="lg:col-span-8 space-y-4">
-            <p className="font-mono text-[9px] uppercase tracking-[0.45em] text-accent-blue/70">{copy.detail.gallery}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {galleryFrames.map((frame, index) => (
-                <div key={`${project.slug}-${index}`} className="overflow-hidden rounded-[2px] bg-black os-panel-shadow">
-                  <img
-                    src={frame}
-                    alt={project.title}
-                    className="w-full aspect-[4/3] object-cover brightness-95 saturate-110"
-                  />
-                </div>
-              ))}
-            </div>
-          </RevealBlock>
+          {galleryFrames.length > 0 ? (
+            <RevealBlock className="lg:col-span-8 space-y-4">
+              <p className="font-mono text-[9px] uppercase tracking-[0.45em] text-accent-blue/70">{copy.detail.gallery}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {galleryFrames.map((frame, index) => (
+                  <div key={`${project.slug}-${index}`} className="overflow-hidden rounded-[2px] bg-black os-panel-shadow">
+                    <img
+                      src={frame}
+                      alt={project.title}
+                      className="w-full aspect-[4/3] object-cover brightness-95 saturate-110"
+                    />
+                  </div>
+                ))}
+              </div>
+            </RevealBlock>
+          ) : null}
         </div>
 
         <RevealBlock className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/8 pt-10">
