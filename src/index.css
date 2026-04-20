@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-bg-primary: #0a0a0a;
+  --color-text-primary: #f5f2ed;
+  --color-paper: #e8e5df;
+  --color-ink: #1a1a1a;
+  --color-accent-violet: #8b5cf6;
+  --color-accent-blue: #3b82f6;
+
+  --color-violet-900: oklch(38% 0.189 293.745);
+  --color-blue-900: oklch(37.9% 0.146 265.522);
+  --color-emerald-900: oklch(37.8% 0.077 168.94);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: var(--color-bg-primary);
+    background-image: radial-gradient(circle at 50% 50%, #141414 0%, #0a0a0a 100%);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: color-mix(in srgb, white 10%, transparent);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, white 20%, transparent);
+  }
+}
+
+@layer components {
+  .scanline-effect {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background:
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03)
+      );
+    background-size: 100% 4px, 3px 100%;
+  }
+
+  .screen-glare {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.01) 50%,
+      transparent 50%
+    );
+  }
+
+  .os-panel-shadow {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 20px 50px -10px rgba(0, 0, 0, 0.5),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .grain-effect {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    opacity: 0.03;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  }
+
+  .vignette {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.8) 150%);
+  }
+
+  .chromatic-text {
+    text-shadow:
+      -1px 0 rgba(255, 0, 0, 0.3),
+      1px 0 rgba(0, 255, 255, 0.3);
+  }
+}
+
+.mask-radial {
+  mask-image: radial-gradient(circle, black 40%, transparent 100%);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-drift {
+  animation: drift 20s ease-in-out infinite;
+}
