@@ -101,6 +101,17 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                 {project.category} // {project.year}
               </div>
               <p className="text-white/45 leading-relaxed">{project.description}</p>
+              {project.externalUrl ? (
+                <a
+                  href={project.externalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 border border-white/12 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.34em] text-white/70 transition-colors hover:border-white/25 hover:text-white"
+                >
+                  {copy.detail.watchExternal}
+                  <ArrowRight size={14} />
+                </a>
+              ) : null}
             </div>
           </RevealBlock>
 

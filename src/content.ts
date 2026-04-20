@@ -9,6 +9,7 @@ export interface ProjectEntry {
   description: string;
   image: string;
   video?: string;
+  externalUrl?: string;
   gallery?: string[];
 }
 
@@ -89,6 +90,7 @@ export interface SiteCopy {
   detail: {
     overview: string;
     gallery: string;
+    watchExternal: string;
     backArchive: string;
     previous: string;
     next: string;
@@ -186,6 +188,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "以高速拦截、武器动势和高压广告语气构建的一支比赛广告短片，现阶段已收敛出主成片和关键分镜画面。",
           image: asset("/portfolio/redtail/cover.jpg"),
           video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
@@ -203,6 +206,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "从多版成片中收敛出的主视频版本，以人物造型、自然元素和仪式化氛围构成一支完整的时尚叙事短片。",
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
           gallery: [
             asset("/portfolio/mthayas-cover.jpg"),
             asset("/portfolio/mthayas-walk.jpeg"),
@@ -219,6 +223,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "一支已经具备封面、主视频和可用首帧体系的独立短片，适合作为站内一级视频条目展示。",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
@@ -235,6 +240,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "保留参赛作品的完整主视频与封面，用更独立的条目承接作品完成度，而不是并入其他影像合集。",
           image: asset("/portfolio/kling/cover.jpg"),
           video: asset("/portfolio/kling/kling-film.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
           gallery: [asset("/portfolio/kling/cover.jpg")],
         },
         {
@@ -247,6 +253,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "以第一视角飞船起飞为主题的短视频概念，画面重点放在城市层级、飞行载具与赛博氛围的快速建立。",
           image: asset("/portfolio/starship/video-cover.jpg"),
           video: asset("/portfolio/starship/starship-pov-web.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
           gallery: [
             asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
@@ -365,6 +372,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     detail: {
       overview: "项目简介",
       gallery: "项目图像",
+      watchExternal: "去 B 站看完整版",
       backArchive: "返回作品索引",
       previous: "上一个",
       next: "下一个",
@@ -458,6 +466,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "A competition ad built around high-speed interception, weapon motion, and compressed commercial tension, now narrowed down to a main cut with key still frames.",
           image: asset("/portfolio/redtail/cover.jpg"),
           video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
@@ -475,6 +484,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "The selected final version from a larger fashion-film exploration, shaped by styling, natural elements, and a more ritualized emotional rhythm.",
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
           gallery: [
             asset("/portfolio/mthayas-cover.jpg"),
             asset("/portfolio/mthayas-walk.jpeg"),
@@ -491,6 +501,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "A standalone short film package with a final video and usable key frames, making it ready for the first batch of published case pages.",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
@@ -507,6 +518,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "An entry film preserved as its own case instead of being merged into broader image experiments, with a clean cover and a complete main cut.",
           image: asset("/portfolio/kling/cover.jpg"),
           video: asset("/portfolio/kling/kling-film.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
           gallery: [asset("/portfolio/kling/cover.jpg")],
         },
         {
@@ -519,6 +531,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             "A first-person starship launch concept focused on rapid worldbuilding through airborne motion, vehicle scale, and cyberpunk city atmosphere.",
           image: asset("/portfolio/starship/video-cover.jpg"),
           video: asset("/portfolio/starship/starship-pov-web.mp4"),
+          externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
           gallery: [
             asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
@@ -637,6 +650,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     detail: {
       overview: "Overview",
       gallery: "Frames",
+      watchExternal: "Watch Full Version on Bilibili",
       backArchive: "Back to Work",
       previous: "Previous",
       next: "Next",
