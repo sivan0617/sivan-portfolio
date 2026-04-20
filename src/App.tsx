@@ -32,9 +32,20 @@ const hasSeenBoot = () => {
   return window.sessionStorage.getItem(BOOT_KEY) === "1";
 };
 
+const hasDirectRoute = () => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const hashPath = window.location.hash.replace(/^#/, "");
+  return hashPath !== "" && hashPath !== "/";
+};
+
 export default function App() {
   const location = useLocation();
-  const [isLoaded, setIsLoaded] = useState(() => hasSeenBoot() || location.pathname !== "/");
+  const [isLoaded, setIsLoaded] = useState(
+    () => hasSeenBoot() || hasDirectRoute() || location.pathname !== "/",
+  );
   const [locale, setLocale] = useState<Locale>(readLocale);
   const copy = useMemo(() => siteContent[locale], [locale]);
 
@@ -46,6 +57,12 @@ export default function App() {
   useEffect(() => {
     window.localStorage.setItem(LOCALE_KEY, locale);
   }, [locale]);
+
+  useEffect(() => {
+    if (!isLoaded && (location.pathname !== "/" || hasDirectRoute())) {
+      setIsLoaded(true);
+    }
+  }, [isLoaded, location.pathname]);
 
   const completeBoot = () => {
     window.sessionStorage.setItem(BOOT_KEY, "1");
