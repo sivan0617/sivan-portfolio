@@ -44,6 +44,9 @@ export const WorkIndexPage = ({ copy }: WorkIndexPageProps) => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={index === 0 ? "high" : "auto"}
                     className="w-full h-full object-cover grayscale brightness-60 group-hover:scale-105 transition-transform duration-[2.5s] ease-out"
                     referrerPolicy="no-referrer"
                   />

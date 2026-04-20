@@ -24,6 +24,8 @@ export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
               <img
                 src={copy.portraitImage}
                 alt={copy.portraitAlt}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale brightness-110 contrast-125 mix-blend-multiply opacity-90"
               />
             </motion.div>

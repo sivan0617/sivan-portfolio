@@ -185,7 +185,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "以高速拦截、武器动势和高压广告语气构建的一支比赛广告短片，现阶段已收敛出主成片和关键分镜画面。",
           image: asset("/portfolio/redtail/cover.jpg"),
-          video: asset("/portfolio/redtail/redtail-ad.mp4"),
+          video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
@@ -201,7 +201,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "从多版成片中收敛出的主视频版本，以人物造型、自然元素和仪式化氛围构成一支完整的时尚叙事短片。",
-          image: asset("/portfolio/mthayas/video-cover.png"),
+          image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           gallery: [
             asset("/portfolio/mthayas-cover.jpg"),
@@ -245,10 +245,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "以第一视角飞船起飞为主题的短视频概念，画面重点放在城市层级、飞行载具与赛博氛围的快速建立。",
-          image: asset("/portfolio/starship/video-cover.png"),
-          video: asset("/portfolio/starship/starship-pov.mp4"),
+          image: asset("/portfolio/starship/video-cover.jpg"),
+          video: asset("/portfolio/starship/starship-pov-web.mp4"),
           gallery: [
-            asset("/portfolio/video-starship-pov-cover.png"),
+            asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
             asset("/portfolio/video-station-cover.png"),
           ],
@@ -261,11 +261,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "围绕赛博、监控、故障和高对比排版做的一组概念海报，重点放在图像气氛、文字张力和实验感。",
-          image: asset("/portfolio/poster-y2k-cyber.png"),
+          image: asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
           gallery: [
-            asset("/portfolio/poster-y2k-cyber.png"),
+            asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
             asset("/portfolio/poster-surveillance-cyber.jpeg"),
-            asset("/portfolio/poster-glitch-portrait.png"),
+            asset("/portfolio/optimized/poster-glitch-portrait.jpg"),
             asset("/portfolio/poster-focus.jpeg"),
           ],
         },
@@ -277,16 +277,16 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "把饮品、餐饮、商品美妆、城市文旅和工业主题图像压成一组商业海报合集，用真实作品取代泛泛概念图。",
-          image: asset("/portfolio/poster-strawberry-soda.png"),
+          image: asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
           gallery: [
-            asset("/portfolio/poster-blueberry-soda.png"),
-            asset("/portfolio/poster-watermelon-soda.png"),
-            asset("/portfolio/poster-pineapple-soda.png"),
+            asset("/portfolio/optimized/poster-blueberry-soda.jpg"),
+            asset("/portfolio/optimized/poster-watermelon-soda.jpg"),
+            asset("/portfolio/optimized/poster-pineapple-soda.jpg"),
             asset("/portfolio/posters/commercial/noodles.jpg"),
             asset("/portfolio/posters/commercial/avon.jpg"),
             asset("/portfolio/posters/commercial/crystal.jpg"),
             asset("/portfolio/posters/commercial/urban-residence.jpg"),
-            asset("/portfolio/poster-jiangnan-shipyard.png"),
+            asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
           ],
         },
         {
@@ -457,7 +457,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "A competition ad built around high-speed interception, weapon motion, and compressed commercial tension, now narrowed down to a main cut with key still frames.",
           image: asset("/portfolio/redtail/cover.jpg"),
-          video: asset("/portfolio/redtail/redtail-ad.mp4"),
+          video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
@@ -473,7 +473,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "The selected final version from a larger fashion-film exploration, shaped by styling, natural elements, and a more ritualized emotional rhythm.",
-          image: asset("/portfolio/mthayas/video-cover.png"),
+          image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           gallery: [
             asset("/portfolio/mthayas-cover.jpg"),
@@ -517,10 +517,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A first-person starship launch concept focused on rapid worldbuilding through airborne motion, vehicle scale, and cyberpunk city atmosphere.",
-          image: asset("/portfolio/starship/video-cover.png"),
-          video: asset("/portfolio/starship/starship-pov.mp4"),
+          image: asset("/portfolio/starship/video-cover.jpg"),
+          video: asset("/portfolio/starship/starship-pov-web.mp4"),
           gallery: [
-            asset("/portfolio/video-starship-pov-cover.png"),
+            asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
             asset("/portfolio/video-station-cover.png"),
           ],
@@ -533,11 +533,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A set of cyber, surveillance, glitch, and high-contrast poster works centered on atmosphere, typographic tension, and experimental image treatment.",
-          image: asset("/portfolio/poster-y2k-cyber.png"),
+          image: asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
           gallery: [
-            asset("/portfolio/poster-y2k-cyber.png"),
+            asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
             asset("/portfolio/poster-surveillance-cyber.jpeg"),
-            asset("/portfolio/poster-glitch-portrait.png"),
+            asset("/portfolio/optimized/poster-glitch-portrait.jpg"),
             asset("/portfolio/poster-focus.jpeg"),
           ],
         },
@@ -549,16 +549,16 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "A broader commercial poster grouping that combines drink ads, restaurant posters, product visuals, city imagery, and industrial subject matter.",
-          image: asset("/portfolio/poster-strawberry-soda.png"),
+          image: asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
           gallery: [
-            asset("/portfolio/poster-blueberry-soda.png"),
-            asset("/portfolio/poster-watermelon-soda.png"),
-            asset("/portfolio/poster-pineapple-soda.png"),
+            asset("/portfolio/optimized/poster-blueberry-soda.jpg"),
+            asset("/portfolio/optimized/poster-watermelon-soda.jpg"),
+            asset("/portfolio/optimized/poster-pineapple-soda.jpg"),
             asset("/portfolio/posters/commercial/noodles.jpg"),
             asset("/portfolio/posters/commercial/avon.jpg"),
             asset("/portfolio/posters/commercial/crystal.jpg"),
             asset("/portfolio/posters/commercial/urban-residence.jpg"),
-            asset("/portfolio/poster-jiangnan-shipyard.png"),
+            asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
           ],
         },
         {

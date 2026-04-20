@@ -80,6 +80,9 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={index === 0 ? "high" : "auto"}
                     className="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 group-hover:brightness-90 transition-all duration-[4s] ease-out mix-blend-luminosity"
                     referrerPolicy="no-referrer"
                   />

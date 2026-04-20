@@ -73,13 +73,16 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                 poster={project.image}
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
               />
             ) : (
               <img
                 src={heroImage}
                 alt={project.title}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
               />
             )}
@@ -110,6 +113,8 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                     <img
                       src={frame}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full aspect-[4/3] object-cover brightness-95 saturate-110"
                     />
                   </div>
