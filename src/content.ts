@@ -183,13 +183,6 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "我用矿物感和冷白材质，做了一套从识别到包装都能落地的品牌视觉。",
           image: asset("/portfolio/kuang/cover.jpg"),
-          clips: [
-            {
-              title: "饰品宣发片 / 成片",
-              video: asset("/portfolio/kuang/film/kuang-jewelry-film.mp4"),
-              poster: asset("/portfolio/kuang/film/cover.jpg"),
-            },
-          ],
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
             asset("/portfolio/kuang/logo-system.jpg"),
@@ -230,11 +223,6 @@ export const siteContent: Record<Locale, SiteCopy> = {
               video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
               poster: asset("/portfolio/redtail/cover.jpg"),
-            },
-            {
-              title: "创意片版本",
-              video: asset("/portfolio/redtail/creative-cut-web.mp4"),
-              poster: asset("/portfolio/redtail/brand-mark.jpg"),
             },
           ],
           gallery: [
@@ -301,19 +289,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
               externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
               poster: asset("/portfolio/kling/cover.jpg"),
             },
-            {
-              title: "替代剪辑版",
-              video: asset("/portfolio/march-28/march-28-alt-web.mp4"),
-              poster: asset("/portfolio/march-28/cover.jpg"),
-            },
           ],
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/kling/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
             asset("/portfolio/march-28/frame-2.jpg"),
-            asset("/portfolio/redtail/brand-mark.jpg"),
-            asset("/portfolio/redtail/final-frame.jpg"),
           ],
         },
         {
@@ -410,11 +391,6 @@ export const siteContent: Record<Locale, SiteCopy> = {
               title: "空间光效 / 翻书丁达尔",
               video: asset("/portfolio/experimental/videos/book-tyndall.mp4"),
               poster: asset("/portfolio/experimental/book-tunnel.jpg"),
-            },
-            {
-              title: "终端参考 / CRT 启动",
-              video: asset("/portfolio/experimental/videos/crt-terminal.mp4"),
-              poster: asset("/portfolio/experimental/crt-threshold.jpg"),
             },
           ],
           gallery: [
@@ -663,13 +639,6 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "A brand system built around mineral forms, cool-white materials, premium packaging, and spatial presentation across identity, packaging, store, and digital touchpoints.",
           image: asset("/portfolio/kuang/cover.jpg"),
-          clips: [
-            {
-              title: "Jewelry Promo Film / Main Cut",
-              video: asset("/portfolio/kuang/film/kuang-jewelry-film.mp4"),
-              poster: asset("/portfolio/kuang/film/cover.jpg"),
-            },
-          ],
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
             asset("/portfolio/kuang/logo-system.jpg"),
@@ -710,11 +679,6 @@ export const siteContent: Record<Locale, SiteCopy> = {
               video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
               poster: asset("/portfolio/redtail/cover.jpg"),
-            },
-            {
-              title: "Creative Cut",
-              video: asset("/portfolio/redtail/creative-cut-web.mp4"),
-              poster: asset("/portfolio/redtail/brand-mark.jpg"),
             },
           ],
           gallery: [
@@ -781,19 +745,12 @@ export const siteContent: Record<Locale, SiteCopy> = {
               externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
               poster: asset("/portfolio/kling/cover.jpg"),
             },
-            {
-              title: "Alternate Edit",
-              video: asset("/portfolio/march-28/march-28-alt-web.mp4"),
-              poster: asset("/portfolio/march-28/cover.jpg"),
-            },
           ],
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/kling/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
             asset("/portfolio/march-28/frame-2.jpg"),
-            asset("/portfolio/redtail/brand-mark.jpg"),
-            asset("/portfolio/redtail/final-frame.jpg"),
           ],
         },
         {
@@ -890,11 +847,6 @@ export const siteContent: Record<Locale, SiteCopy> = {
               title: "Spatial Light / Book Tyndall",
               video: asset("/portfolio/experimental/videos/book-tyndall.mp4"),
               poster: asset("/portfolio/experimental/book-tunnel.jpg"),
-            },
-            {
-              title: "CRT Reference / Terminal Boot",
-              video: asset("/portfolio/experimental/videos/crt-terminal.mp4"),
-              poster: asset("/portfolio/experimental/crt-threshold.jpg"),
             },
           ],
           gallery: [
