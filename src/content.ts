@@ -85,7 +85,12 @@ export interface SiteCopy {
     heading: string;
     primaryCta: string;
     secondaryCta: string;
+    pageEyebrow: string;
+    pageTitle: string;
+    pageBody: string;
+    availability: string;
     email?: string;
+    methods: Array<{ label: string; value: string; href?: string; note?: string }>;
     footer: string;
     socials: Array<{ label: string; href?: string }>;
   };
@@ -475,9 +480,35 @@ export const siteContent: Record<Locale, SiteCopy> = {
       focus: ["视频概念实验", "商业海报表达", "动态广告探索"],
     },
     contact: {
-      heading: "作品详情与联系信息可继续补充。",
-      primaryCta: "联系方式待补",
-      secondaryCta: "资料持续更新",
+      heading: "如果你在寻找更有辨识度的视觉表达，欢迎联系我。",
+      primaryCta: "进入联系方式",
+      secondaryCta: "查看合作渠道",
+      pageEyebrow: "// contact / collaboration",
+      pageTitle: "联系与合作",
+      pageBody:
+        "目前开放全职机会，也接受品牌视觉、广告影像与创意合作项目。你可以通过邮件或社交平台联系我，简单说明项目方向、合作需求或岗位信息即可。",
+      availability: "优先方向：全职 / 品牌项目合作 / 广告与影像项目合作",
+      methods: [
+        {
+          label: "邮箱",
+          value: "xanven@foxmail.com",
+          href: "mailto:xanven@foxmail.com",
+          note: "建议用于正式合作、岗位沟通与作品索取",
+        },
+        {
+          label: "微信",
+          value: "Yaooooooxw",
+          note: "可直接通过微信添加，适合更快沟通合作与岗位机会",
+        },
+        {
+          label: "小红书",
+          value: "@待补充",
+        },
+        {
+          label: "Instagram",
+          value: "@待补充",
+        },
+      ],
       footer: "Sivan Portfolio © 2026。",
       socials: [
         { label: "海报设计" },
@@ -868,9 +899,35 @@ export const siteContent: Record<Locale, SiteCopy> = {
       focus: ["Video Concept Studies", "Commercial Posters", "Dynamic Ad Ideas"],
     },
     contact: {
-      heading: "More contact details can be added next.",
-      primaryCta: "Contact Pending",
-      secondaryCta: "Portfolio Updating",
+      heading: "If you need more distinctive visual work, let's talk.",
+      primaryCta: "Open Contact Page",
+      secondaryCta: "View Contact Channels",
+      pageEyebrow: "// contact / collaboration",
+      pageTitle: "Contact & Collaboration",
+      pageBody:
+        "I am currently open to full-time roles as well as branding, advertising film, and creative visual collaborations. Reach out by email or social platforms with your brief, role, or timeline.",
+      availability: "Open to full-time roles, branding projects, and advertising or moving-image collaborations",
+      methods: [
+        {
+          label: "Email",
+          value: "xanven@foxmail.com",
+          href: "mailto:xanven@foxmail.com",
+          note: "Best for formal inquiries, roles, and project discussions",
+        },
+        {
+          label: "WeChat",
+          value: "Yaooooooxw",
+          note: "Use WeChat for faster communication on collaborations and roles",
+        },
+        {
+          label: "Xiaohongshu",
+          value: "@to-be-added",
+        },
+        {
+          label: "Instagram",
+          value: "@to-be-added",
+        },
+      ],
       footer: "Sivan Portfolio © 2026.",
       socials: [
         { label: "Poster Design" },
@@ -904,6 +961,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
 export const getPageTitle = (copy: SiteCopy, pathname: string) => {
   if (pathname === "/work") {
     return `${copy.archive.title} · ${copy.meta.title}`;
+  }
+
+  if (pathname === "/connect") {
+    return `${copy.contact.pageTitle} · ${copy.meta.title}`;
   }
 
   if (pathname.startsWith("/work/")) {

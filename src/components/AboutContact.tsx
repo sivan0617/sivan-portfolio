@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Mail, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import type { SiteCopy } from "../content";
 
 interface AboutContactProps {
@@ -82,40 +83,24 @@ export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
           </h2>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            {contactCopy.email ? (
-              <>
-                <motion.a
-                  href={`mailto:${contactCopy.email}`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative px-12 py-6 rounded-full border border-white/20 overflow-hidden hover:border-white transition-colors"
-                >
-                  <span className="relative z-10 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em]">
-                    <Mail size={16} /> {contactCopy.primaryCta}
-                  </span>
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
-                </motion.a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/connect"
+                className="group relative flex px-12 py-6 rounded-full border border-white/20 overflow-hidden hover:border-white transition-colors"
+              >
+                <span className="relative z-10 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em]">
+                  <Mail size={16} /> {contactCopy.primaryCta}
+                </span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
+              </Link>
+            </motion.div>
 
-                <a
-                  href={`mailto:${contactCopy.email}`}
-                  className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.4em] text-text-primary/40 hover:text-text-primary transition-colors"
-                >
-                  {contactCopy.secondaryCta} <ArrowUpRight size={12} />
-                </a>
-              </>
-            ) : (
-              <>
-                <div className="group relative px-12 py-6 rounded-full border border-white/10 text-white/35">
-                  <span className="relative z-10 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em]">
-                    <Mail size={16} /> {contactCopy.primaryCta}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.4em] text-text-primary/30">
-                  {contactCopy.secondaryCta} <ArrowUpRight size={12} />
-                </div>
-              </>
-            )}
+            <Link
+              to="/connect"
+              className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.4em] text-text-primary/40 hover:text-text-primary transition-colors"
+            >
+              {contactCopy.secondaryCta} <ArrowUpRight size={12} />
+            </Link>
           </div>
         </motion.div>
 

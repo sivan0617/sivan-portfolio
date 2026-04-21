@@ -7,6 +7,7 @@ import { SiteFooter } from "./components/SiteFooter";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { getPageTitle, siteContent, type Locale } from "./content";
 import { HomePage } from "./pages/HomePage";
+import { ContactPage } from "./pages/ContactPage";
 import { ProcessPage } from "./pages/ProcessPage";
 import { ProjectDetailPage } from "./pages/ProjectDetailPage";
 import { WorkIndexPage } from "./pages/WorkIndexPage";
@@ -80,6 +81,7 @@ export default function App() {
             <AnimatePresence mode="wait" initial={false}>
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<HomePage copy={copy} />} />
+                <Route path="/connect" element={<ContactPage copy={copy} />} />
                 <Route path="/work" element={<WorkIndexPage copy={copy} />} />
                 <Route path="/work/:slug" element={<ProjectDetailPage copy={copy} />} />
                 <Route path="/process" element={<ProcessPage copy={copy} />} />
