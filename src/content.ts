@@ -216,18 +216,18 @@ export const siteContent: Record<Locale, SiteCopy> = {
         },
         {
           slug: "mthayas-film",
-          titleLines: ["时尚大片", "影像成片"],
-          title: "时尚大片成片",
-          category: "AIGC 影像 / 时尚叙事",
+          titleLines: ["藏地时尚", "影像成片"],
+          title: "藏地时尚影像",
+          category: "藏地时尚 / 影像成片",
           year: "2026",
           description:
-            "从多版成片中收敛出的主视频版本，以人物造型、自然元素和仪式化氛围构成一支完整的时尚叙事短片。",
+            "围绕藏地服饰、自然地貌与仪式感造型展开的时尚影像，画面重点落在人物气息、风感和场域氛围的建立。",
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
           clips: [
             {
-              title: "成片主版本",
+              title: "正片",
               video: asset("/portfolio/mthayas/mthayas-film.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
               poster: asset("/portfolio/mthayas/video-cover.jpg"),
@@ -241,24 +241,24 @@ export const siteContent: Record<Locale, SiteCopy> = {
         },
         {
           slug: "march-28-film",
-          titleLines: ["3月28日", "Kling 参赛版"],
-          title: "3月28日 / Kling 参赛版",
-          category: "AIGC 短片 / 参赛版本",
+          titleLines: ["藏地时尚", "3月28日"],
+          title: "3月28日",
+          category: "藏地时尚 / 短片变体",
           year: "2026",
           description:
-            "同一影像项目的主版与参赛版统一收束到一个案例里，站内以《3月28日》为主视频，同时保留 Kling 参赛版封面和版本关系。",
+            "延续同一组藏地时尚母题的短片表达，更靠近人物凝视、姿态和近景情绪，保留两种节奏不同的剪辑版本。",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
           clips: [
             {
-              title: "3月28日 / 主版本",
+              title: "3月28日",
               video: asset("/portfolio/march-28/march-28.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
               poster: asset("/portfolio/march-28/cover.jpg"),
             },
             {
-              title: "Kling 参赛版",
+              title: "Kling 版本",
               video: asset("/portfolio/kling/kling-film.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
               poster: asset("/portfolio/kling/cover.jpg"),
@@ -269,6 +269,23 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/kling/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
             asset("/portfolio/march-28/frame-2.jpg"),
+          ],
+        },
+        {
+          slug: "tibet-editorial",
+          titleLines: ["藏地时尚", "静帧图集"],
+          title: "藏地时尚静帧",
+          category: "藏地时尚 / 静帧图集",
+          year: "2026",
+          description:
+            "从同一组视觉母题延展开的静帧图像，聚焦服饰层次、发型结构、雪山轮廓和人物状态之间的关系。",
+          image: asset("/portfolio/tibet-editorial/walk.jpg"),
+          gallery: [
+            asset("/portfolio/tibet-editorial/profile.jpg"),
+            asset("/portfolio/tibet-editorial/braids.jpg"),
+            asset("/portfolio/tibet-editorial/model-sheet.jpg"),
+            asset("/portfolio/tibet-editorial/lake.jpg"),
+            asset("/portfolio/tibet-editorial/upside-down.jpg"),
           ],
         },
         {
@@ -303,7 +320,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "实验影像 / 风格合集",
           year: "2025",
           description:
-            "把之前漏掉的大量实验短视频按风格重新归档，集中成一页风格切片：系统故障、赛博通勤、超现实抒情和空间奇观，而不是继续散落在文件名里。",
+            "把不同气质的动态实验集中到同一页里，按系统故障、赛博通勤、超现实抒情和空间奇观四种视觉语言展开。",
           image: asset("/portfolio/experimental/crowd-digitized.jpg"),
           clips: [
             {
@@ -373,7 +390,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 实验风格",
           year: "2025",
           description:
-            "围绕赛博、监控、故障和高对比排版整理出来的一组风格海报，重点是图像压迫感、文字张力和实验气质。",
+            "围绕赛博、监控、故障和高对比排版展开的一组海报，重点是图像压迫感、文字张力和实验气质。",
           image: asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
@@ -389,7 +406,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 高饱和消费视觉",
           year: "2025",
           description:
-            "把饮品、餐饮、零售与消费品图像按高饱和商业语言重新归组，保留色彩和货架感最强的一批作品。",
+            "以饮品、餐饮、零售与消费品图像构成的一组高饱和商业海报，强调色彩冲击、货架感和消费欲望。",
           image: asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
@@ -410,7 +427,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 城市空间 / 工业冷调",
           year: "2025",
           description:
-            "把城市、地产、文旅和工业主题里偏冷调、空间感和建筑感更强的作品单独归成一组，避免再和消费视觉混在一起。",
+            "以城市、地产、文旅和工业主题为基础的一组冷调海报，画面重心放在空间感、建筑感和金属气息。",
           image: asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
@@ -420,30 +437,13 @@ export const siteContent: Record<Locale, SiteCopy> = {
           ],
         },
         {
-          slug: "tibet-editorial",
-          titleLines: ["藏地时尚", "静帧图集"],
-          title: "藏地时尚静帧图集",
-          category: "时尚静帧 / 藏地 editorial",
-          year: "2026",
-          description:
-            "从同一人物、服饰和雪山语境里抽出的时尚静帧组，只保留 editorial 语义，不再和任何品牌项目混类。",
-          image: asset("/portfolio/tibet-editorial/walk.jpg"),
-          gallery: [
-            asset("/portfolio/tibet-editorial/profile.jpg"),
-            asset("/portfolio/tibet-editorial/braids.jpg"),
-            asset("/portfolio/tibet-editorial/model-sheet.jpg"),
-            asset("/portfolio/tibet-editorial/lake.jpg"),
-            asset("/portfolio/tibet-editorial/upside-down.jpg"),
-          ],
-        },
-        {
           slug: "portrait-poster-series",
           titleLines: ["人物叙事", "潮流肖像"],
           title: "人物叙事 / 潮流肖像海报",
           category: "海报 / 人物叙事 / 潮流肖像",
           year: "2025",
           description:
-            "把人物主体更强、叙事感更明显的一批海报抽出来，统一落在人物叙事和潮流肖像的风格分组里。",
+            "以人物主体、表情张力和画面叙事为核心的一组肖像海报，整体更靠近潮流摄影和角色化表达。",
           image: asset("/portfolio/posters/portrait/child-magenta.jpg"),
           gallery: [
             asset("/portfolio/posters/portrait/you-me.jpg"),
@@ -458,7 +458,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     about: {
       portraitImage: asset("/portfolio/about-signal.jpeg"),
       portraitAlt: "姚茜文作品图像",
-      sideLabel: "视觉档案_01 // 2026 归档",
+      sideLabel: "视觉档案_01 // 2026",
       eyebrow: "// 视觉设计师 / AIGC 创作者",
       heading: {
         before: "海报",
@@ -478,7 +478,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
       heading: "作品详情与联系信息可继续补充。",
       primaryCta: "联系方式待补",
       secondaryCta: "资料持续更新",
-      footer: "Sivan Portfolio © 2026。内容持续整理中。",
+      footer: "Sivan Portfolio © 2026。",
       socials: [
         { label: "海报设计" },
         { label: "AIGC 视频" },
@@ -488,7 +488,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     archive: {
       title: "作品档案",
       intro:
-        "当前档案已重新整理为完整项目与风格化合集两条线：品牌、广告、主视频项目保持独立，实验视频与散碎海报则按风格重新归组。",
+        "品牌、广告与影像项目独立展开，静帧、海报和动态实验则顺着各自的视觉语言进入不同系列。",
       openCase: "进入项目",
       backHome: "返回首页",
     },
@@ -609,18 +609,18 @@ export const siteContent: Record<Locale, SiteCopy> = {
         },
         {
           slug: "mthayas-film",
-          titleLines: ["Fashion Film", "Final Cut"],
-          title: "Fashion Film Final Cut",
-          category: "AIGC Film / Fashion Narrative",
+          titleLines: ["Tibetan Fashion", "Film"],
+          title: "Tibetan Fashion Film",
+          category: "Tibetan Fashion / Film",
           year: "2026",
           description:
-            "The selected final version from a larger fashion-film exploration, shaped by styling, natural elements, and a more ritualized emotional rhythm.",
+            "A fashion film built around Tibetan-inspired styling, natural terrain, and ritualized atmosphere, with emphasis on presence, wind, and spatial mood.",
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
           clips: [
             {
-              title: "Main Film Cut",
+              title: "Main Cut",
               video: asset("/portfolio/mthayas/mthayas-film.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
               poster: asset("/portfolio/mthayas/video-cover.jpg"),
@@ -634,24 +634,24 @@ export const siteContent: Record<Locale, SiteCopy> = {
         },
         {
           slug: "march-28-film",
-          titleLines: ["March 28", "Kling Entry"],
-          title: "March 28 / Kling Entry",
-          category: "AIGC Short Film / Competition Versions",
+          titleLines: ["Tibetan Fashion", "March 28"],
+          title: "March 28",
+          category: "Tibetan Fashion / Film Variation",
           year: "2026",
           description:
-            "The main cut and the Kling competition version are now consolidated into one case page, using March 28 as the primary film while keeping the entry-version relationship visible.",
+            "A variation within the same Tibetan-fashion visual world, leaning further into close-up emotion, stillness, and a more intimate pacing across two edits.",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
           clips: [
             {
-              title: "March 28 / Main Cut",
+              title: "March 28",
               video: asset("/portfolio/march-28/march-28.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
               poster: asset("/portfolio/march-28/cover.jpg"),
             },
             {
-              title: "Kling Entry Version",
+              title: "Kling Cut",
               video: asset("/portfolio/kling/kling-film.mp4"),
               externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
               poster: asset("/portfolio/kling/cover.jpg"),
@@ -662,6 +662,23 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/kling/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
             asset("/portfolio/march-28/frame-2.jpg"),
+          ],
+        },
+        {
+          slug: "tibet-editorial",
+          titleLines: ["Tibetan Fashion", "Editorial Stills"],
+          title: "Tibetan Fashion Editorial",
+          category: "Tibetan Fashion / Editorial Stills",
+          year: "2026",
+          description:
+            "A still-image extension of the same visual motif, focused on garment layers, braided silhouettes, mountain contours, and the subject's posture.",
+          image: asset("/portfolio/tibet-editorial/walk.jpg"),
+          gallery: [
+            asset("/portfolio/tibet-editorial/profile.jpg"),
+            asset("/portfolio/tibet-editorial/braids.jpg"),
+            asset("/portfolio/tibet-editorial/model-sheet.jpg"),
+            asset("/portfolio/tibet-editorial/lake.jpg"),
+            asset("/portfolio/tibet-editorial/upside-down.jpg"),
           ],
         },
         {
@@ -696,7 +713,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "Experimental Motion / Style Collection",
           year: "2025",
           description:
-            "A regrouped archive of the previously omitted motion studies, organized by style rather than file names: system glitches, cyber commuting, surreal lyricism, and spatial spectacle.",
+            "A collection of motion studies arranged by visual language rather than file names, moving across system glitches, cyber commuting, surreal lyricism, and spatial spectacle.",
           image: asset("/portfolio/experimental/crowd-digitized.jpg"),
           clips: [
             {
@@ -766,7 +783,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "Poster / Experimental Style",
           year: "2025",
           description:
-            "A poster group centered on cyber aesthetics, surveillance, glitches, and high-contrast typography, reorganized as a style cluster rather than a loose concept dump.",
+            "A poster group centered on cyber aesthetics, surveillance, glitches, and high-contrast typography, driven by image pressure and experimental tension.",
           image: asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
@@ -782,7 +799,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "Poster / High-Saturation Consumer Visuals",
           year: "2025",
           description:
-            "A regrouped set of beverage, food, retail, and consumer-facing posters unified by stronger color, shelf energy, and commercial saturation.",
+            "A set of beverage, food, retail, and consumer-facing posters unified by stronger color, shelf energy, and direct commercial punch.",
           image: asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
@@ -803,7 +820,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "Poster / Urban Space / Industrial Mood",
           year: "2025",
           description:
-            "City, real-estate, travel, and industrial pieces with stronger spatial and cool-tone qualities are grouped here instead of being mixed into consumer poster sets.",
+            "A cool-toned group of city, real-estate, travel, and industrial posters with a stronger emphasis on space, structure, and metallic atmosphere.",
           image: asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
@@ -813,30 +830,13 @@ export const siteContent: Record<Locale, SiteCopy> = {
           ],
         },
         {
-          slug: "tibet-editorial",
-          titleLines: ["Tibetan Fashion", "Editorial Stills"],
-          title: "Tibetan Fashion Editorial Stills",
-          category: "Fashion Stills / Tibetan Editorial",
-          year: "2026",
-          description:
-            "A standalone editorial still-frame set built around one character, one wardrobe language, and a shared mountain setting, kept fully separate from the KUANG brand system.",
-          image: asset("/portfolio/tibet-editorial/walk.jpg"),
-          gallery: [
-            asset("/portfolio/tibet-editorial/profile.jpg"),
-            asset("/portfolio/tibet-editorial/braids.jpg"),
-            asset("/portfolio/tibet-editorial/model-sheet.jpg"),
-            asset("/portfolio/tibet-editorial/lake.jpg"),
-            asset("/portfolio/tibet-editorial/upside-down.jpg"),
-          ],
-        },
-        {
           slug: "portrait-poster-series",
           titleLines: ["Narrative Figures", "Trend Portraits"],
           title: "Narrative Figure / Trend Portrait Posters",
           category: "Poster / Narrative Figures / Trend Portraits",
           year: "2025",
           description:
-            "A poster group organized around character presence, narrative framing, and stylized portrait energy instead of mixed topical labels.",
+            "A portrait-driven poster group built around subject presence, narrative framing, and stylized fashion-photography energy.",
           image: asset("/portfolio/posters/portrait/child-magenta.jpg"),
           gallery: [
             asset("/portfolio/posters/portrait/you-me.jpg"),
@@ -871,7 +871,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
       heading: "More contact details can be added next.",
       primaryCta: "Contact Pending",
       secondaryCta: "Portfolio Updating",
-      footer: "Sivan Portfolio © 2026. Content in progress.",
+      footer: "Sivan Portfolio © 2026.",
       socials: [
         { label: "Poster Design" },
         { label: "AIGC Video" },
@@ -881,7 +881,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     archive: {
       title: "Work Archive",
       intro:
-        "The archive is now split into two clear tracks: complete projects stay independent, while fragmented posters and motion studies are regrouped into style-based collections.",
+        "Brand, advertising, and film projects unfold as independent cases, while stills, posters, and motion studies move through their own visual series.",
       openCase: "Open Project",
       backHome: "Back Home",
     },
