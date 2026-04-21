@@ -83,10 +83,11 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
                     loading={index === 0 ? "eager" : "lazy"}
                     decoding="async"
                     fetchPriority={index === 0 ? "high" : "auto"}
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 group-hover:brightness-90 transition-all duration-[4s] ease-out mix-blend-luminosity"
+                    className="w-full h-full object-cover brightness-[0.82] saturate-[1.08] contrast-[1.04] group-hover:scale-105 group-hover:brightness-[0.95] group-hover:saturate-[1.16] transition-all duration-[4s] ease-out"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-accent-blue/5 opacity-40 mix-blend-color" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/12 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(59,130,246,0.14)]" />
 
                   <div className="absolute inset-4 border border-white/[0.03] pointer-events-none" />
                   <div className="absolute bottom-10 left-10 font-mono text-[6px] tracking-[0.5em] text-white/20 uppercase z-20">

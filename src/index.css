@@ -145,14 +145,18 @@
   }
 
   .hero-crt-video {
-    filter: saturate(0.88) contrast(1.08) brightness(0.82);
-    transform: scale(1.01);
+    filter: saturate(0.96) contrast(1.06) brightness(0.88);
+    transform: scale(1.03);
+  }
+
+  .hero-video-stage {
+    filter: drop-shadow(0 0 36px rgba(59, 130, 246, 0.14)) drop-shadow(0 24px 80px rgba(0, 0, 0, 0.45));
   }
 
   .crt-mask {
     background:
-      radial-gradient(circle at 50% 45%, transparent 35%, rgba(0, 0, 0, 0.18) 68%, rgba(0, 0, 0, 0.62) 100%),
-      linear-gradient(180deg, rgba(59, 130, 246, 0.04), transparent 22%, transparent 78%, rgba(0, 0, 0, 0.3));
+      radial-gradient(circle at 50% 45%, transparent 32%, rgba(0, 0, 0, 0.16) 68%, rgba(0, 0, 0, 0.52) 100%),
+      linear-gradient(180deg, rgba(59, 130, 246, 0.04), transparent 22%, transparent 78%, rgba(0, 0, 0, 0.24));
   }
 
   .crt-mask::before {

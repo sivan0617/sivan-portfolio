@@ -50,10 +50,11 @@ export const WorkIndexPage = ({ copy }: WorkIndexPageProps) => {
                     loading={index < 2 ? "eager" : "lazy"}
                     decoding="async"
                     fetchPriority={index === 0 ? "high" : "auto"}
-                    className="w-full h-full object-cover grayscale brightness-60 group-hover:scale-105 transition-transform duration-[2.5s] ease-out"
+                    className="w-full h-full object-cover brightness-[0.86] saturate-[1.12] contrast-[1.04] group-hover:scale-105 group-hover:saturate-[1.18] transition-all duration-[2.5s] ease-out"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-black/25" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/28 via-transparent to-accent-blue/10" />
+                  <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(59,130,246,0.14)]" />
                   <div className="absolute bottom-6 left-6 font-mono text-[8px] uppercase tracking-[0.45em] text-white/35">
                     {copy.work.sequenceFrame} // {project.year}
                   </div>
