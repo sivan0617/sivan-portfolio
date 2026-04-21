@@ -183,6 +183,13 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "我用矿物感和冷白材质，做了一套从识别到包装都能落地的品牌视觉。",
           image: asset("/portfolio/kuang/cover.jpg"),
+          clips: [
+            {
+              title: "饰品宣发片 / 成片",
+              video: asset("/portfolio/kuang/film/kuang-jewelry-film.mp4"),
+              poster: asset("/portfolio/kuang/film/cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
             asset("/portfolio/kuang/logo-system.jpg"),
@@ -191,6 +198,19 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/kuang/packaging-structure.jpg"),
             asset("/portfolio/kuang/store.jpg"),
             asset("/portfolio/kuang/website.jpg"),
+            asset("/portfolio/kuang/brand-book.jpg"),
+            asset("/portfolio/kuang/display-system.jpg"),
+            asset("/portfolio/kuang/product-card.jpg"),
+            asset("/portfolio/kuang/packaging-render.jpg"),
+            asset("/portfolio/kuang/story-wall.jpg"),
+            asset("/portfolio/kuang/metro-ad.jpg"),
+            asset("/portfolio/kuang/magazine-ad.jpg"),
+            asset("/portfolio/kuang/shopping-bag.jpg"),
+            asset("/portfolio/kuang/gift-box.jpg"),
+            asset("/portfolio/kuang/film/cover.jpg"),
+            asset("/portfolio/kuang/film/still-1.jpg"),
+            asset("/portfolio/kuang/film/still-2.jpg"),
+            asset("/portfolio/kuang/film/model-sheet.jpg"),
           ],
         },
         {
@@ -211,12 +231,21 @@ export const siteContent: Record<Locale, SiteCopy> = {
               externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
               poster: asset("/portfolio/redtail/cover.jpg"),
             },
+            {
+              title: "创意片版本",
+              video: asset("/portfolio/redtail/creative-cut-web.mp4"),
+              poster: asset("/portfolio/redtail/brand-mark.jpg"),
+            },
           ],
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
             asset("/portfolio/redtail/bullet-side.jpg"),
             asset("/portfolio/redtail/bullet-wrap.jpg"),
+            asset("/portfolio/redtail/brand-mark.jpg"),
+            asset("/portfolio/redtail/membrane-wrap.jpg"),
+            asset("/portfolio/redtail/background-match.jpg"),
+            asset("/portfolio/redtail/final-frame.jpg"),
           ],
         },
         {
@@ -242,6 +271,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/mthayas-cover.jpg"),
             asset("/portfolio/mthayas-walk.jpeg"),
             asset("/portfolio/mthayas-lake.jpeg"),
+            asset("/portfolio/mthayas/stills/film-cover.jpg"),
+            asset("/portfolio/mthayas/stills/closeup.jpg"),
+            asset("/portfolio/mthayas/stills/snow-walk.jpg"),
+            asset("/portfolio/mthayas/stills/reflection.jpg"),
           ],
         },
         {
@@ -251,7 +284,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "藏地时尚 / 短片变体",
           year: "2026",
           description:
-            "这是同一组母题的另一版短片，我把镜头拉得更近，也保留了两种不同节奏。",
+            "这是同一组母题的另一版短片，我把镜头拉得更近，也保留了多种不同节奏的剪辑版本。",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
@@ -268,12 +301,19 @@ export const siteContent: Record<Locale, SiteCopy> = {
               externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
               poster: asset("/portfolio/kling/cover.jpg"),
             },
+            {
+              title: "替代剪辑版",
+              video: asset("/portfolio/march-28/march-28-alt-web.mp4"),
+              poster: asset("/portfolio/march-28/cover.jpg"),
+            },
           ],
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/kling/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
             asset("/portfolio/march-28/frame-2.jpg"),
+            asset("/portfolio/redtail/brand-mark.jpg"),
+            asset("/portfolio/redtail/final-frame.jpg"),
           ],
         },
         {
@@ -291,6 +331,9 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/tibet-editorial/model-sheet.jpg"),
             asset("/portfolio/tibet-editorial/lake.jpg"),
             asset("/portfolio/tibet-editorial/upside-down.jpg"),
+            asset("/portfolio/tibet-editorial/opening-frame.jpg"),
+            asset("/portfolio/tibet-editorial/bodnath.jpg"),
+            asset("/portfolio/tibet-editorial/video-cover.jpg"),
           ],
         },
         {
@@ -368,6 +411,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
               video: asset("/portfolio/experimental/videos/book-tyndall.mp4"),
               poster: asset("/portfolio/experimental/book-tunnel.jpg"),
             },
+            {
+              title: "终端参考 / CRT 启动",
+              video: asset("/portfolio/experimental/videos/crt-terminal.mp4"),
+              poster: asset("/portfolio/experimental/crt-threshold.jpg"),
+            },
           ],
           gallery: [
             asset("/portfolio/experimental/crt-threshold.jpg"),
@@ -386,6 +434,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/experimental/wasteland-dome.jpg"),
             asset("/portfolio/experimental/illustrated-reader.jpg"),
             asset("/portfolio/experimental/starship-silhouette.jpg"),
+            asset("/portfolio/experimental/archive-sheet.jpg"),
           ],
         },
         {
@@ -402,6 +451,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/poster-surveillance-cyber.jpeg"),
             asset("/portfolio/optimized/poster-glitch-portrait.jpg"),
             asset("/portfolio/poster-focus.jpeg"),
+            asset("/portfolio/posters/experimental/avant-garde.jpg"),
+            asset("/portfolio/posters/experimental/editorial-layers.jpg"),
+            asset("/portfolio/posters/experimental/cyber-grid.jpg"),
+            asset("/portfolio/posters/experimental/metal-figure.jpg"),
           ],
         },
         {
@@ -423,6 +476,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/posters/commercial/new-opening.jpg"),
             asset("/portfolio/posters/commercial/avon.jpg"),
             asset("/portfolio/posters/commercial/crystal.jpg"),
+            asset("/portfolio/posters/commercial/cabbage-food.jpg"),
+            asset("/portfolio/posters/commercial/fruit-food.jpg"),
+            asset("/portfolio/posters/commercial/hotpot-base.jpg"),
+            asset("/portfolio/posters/commercial/beef-food.jpg"),
+            asset("/portfolio/posters/commercial/cat-snack.jpg"),
           ],
         },
         {
@@ -439,6 +497,9 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/posters/commercial/urban-residence.jpg"),
             asset("/portfolio/posters/commercial/chengdu-tour.jpg"),
             asset("/portfolio/posters/commercial/chongqing-tour.jpg"),
+            asset("/portfolio/posters/industrial/urban-residence-alt.jpg"),
+            asset("/portfolio/posters/industrial/blue-structure.jpg"),
+            asset("/portfolio/posters/industrial/jiangnan-shipyard-alt.jpg"),
           ],
         },
         {
@@ -456,6 +517,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/posters/portrait/child-red.jpg"),
             asset("/portfolio/posters/portrait/night-bartender.jpg"),
             asset("/portfolio/posters/portrait/sports-legend.jpg"),
+            asset("/portfolio/posters/portrait/sports-legend-alt.jpg"),
           ],
         },
       ],
@@ -601,6 +663,13 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "A brand system built around mineral forms, cool-white materials, premium packaging, and spatial presentation across identity, packaging, store, and digital touchpoints.",
           image: asset("/portfolio/kuang/cover.jpg"),
+          clips: [
+            {
+              title: "Jewelry Promo Film / Main Cut",
+              video: asset("/portfolio/kuang/film/kuang-jewelry-film.mp4"),
+              poster: asset("/portfolio/kuang/film/cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
             asset("/portfolio/kuang/logo-system.jpg"),
@@ -609,6 +678,19 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/kuang/packaging-structure.jpg"),
             asset("/portfolio/kuang/store.jpg"),
             asset("/portfolio/kuang/website.jpg"),
+            asset("/portfolio/kuang/brand-book.jpg"),
+            asset("/portfolio/kuang/display-system.jpg"),
+            asset("/portfolio/kuang/product-card.jpg"),
+            asset("/portfolio/kuang/packaging-render.jpg"),
+            asset("/portfolio/kuang/story-wall.jpg"),
+            asset("/portfolio/kuang/metro-ad.jpg"),
+            asset("/portfolio/kuang/magazine-ad.jpg"),
+            asset("/portfolio/kuang/shopping-bag.jpg"),
+            asset("/portfolio/kuang/gift-box.jpg"),
+            asset("/portfolio/kuang/film/cover.jpg"),
+            asset("/portfolio/kuang/film/still-1.jpg"),
+            asset("/portfolio/kuang/film/still-2.jpg"),
+            asset("/portfolio/kuang/film/model-sheet.jpg"),
           ],
         },
         {
@@ -629,12 +711,21 @@ export const siteContent: Record<Locale, SiteCopy> = {
               externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
               poster: asset("/portfolio/redtail/cover.jpg"),
             },
+            {
+              title: "Creative Cut",
+              video: asset("/portfolio/redtail/creative-cut-web.mp4"),
+              poster: asset("/portfolio/redtail/brand-mark.jpg"),
+            },
           ],
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
             asset("/portfolio/redtail/bullet-side.jpg"),
             asset("/portfolio/redtail/bullet-wrap.jpg"),
+            asset("/portfolio/redtail/brand-mark.jpg"),
+            asset("/portfolio/redtail/membrane-wrap.jpg"),
+            asset("/portfolio/redtail/background-match.jpg"),
+            asset("/portfolio/redtail/final-frame.jpg"),
           ],
         },
         {
@@ -660,6 +751,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/mthayas-cover.jpg"),
             asset("/portfolio/mthayas-walk.jpeg"),
             asset("/portfolio/mthayas-lake.jpeg"),
+            asset("/portfolio/mthayas/stills/film-cover.jpg"),
+            asset("/portfolio/mthayas/stills/closeup.jpg"),
+            asset("/portfolio/mthayas/stills/snow-walk.jpg"),
+            asset("/portfolio/mthayas/stills/reflection.jpg"),
           ],
         },
         {
@@ -669,7 +764,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "Tibetan Fashion / Film Variation",
           year: "2026",
           description:
-            "A variation within the same Tibetan-fashion visual world, leaning further into close-up emotion, stillness, and a more intimate pacing across two edits.",
+            "A variation within the same visual world, leaning further into close-up emotion, stillness, and multiple alternate edits with different pacing.",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
@@ -686,12 +781,19 @@ export const siteContent: Record<Locale, SiteCopy> = {
               externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
               poster: asset("/portfolio/kling/cover.jpg"),
             },
+            {
+              title: "Alternate Edit",
+              video: asset("/portfolio/march-28/march-28-alt-web.mp4"),
+              poster: asset("/portfolio/march-28/cover.jpg"),
+            },
           ],
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/kling/cover.jpg"),
             asset("/portfolio/march-28/frame-1.jpg"),
             asset("/portfolio/march-28/frame-2.jpg"),
+            asset("/portfolio/redtail/brand-mark.jpg"),
+            asset("/portfolio/redtail/final-frame.jpg"),
           ],
         },
         {
@@ -709,6 +811,9 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/tibet-editorial/model-sheet.jpg"),
             asset("/portfolio/tibet-editorial/lake.jpg"),
             asset("/portfolio/tibet-editorial/upside-down.jpg"),
+            asset("/portfolio/tibet-editorial/opening-frame.jpg"),
+            asset("/portfolio/tibet-editorial/bodnath.jpg"),
+            asset("/portfolio/tibet-editorial/video-cover.jpg"),
           ],
         },
         {
@@ -786,6 +891,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
               video: asset("/portfolio/experimental/videos/book-tyndall.mp4"),
               poster: asset("/portfolio/experimental/book-tunnel.jpg"),
             },
+            {
+              title: "CRT Reference / Terminal Boot",
+              video: asset("/portfolio/experimental/videos/crt-terminal.mp4"),
+              poster: asset("/portfolio/experimental/crt-threshold.jpg"),
+            },
           ],
           gallery: [
             asset("/portfolio/experimental/crt-threshold.jpg"),
@@ -804,6 +914,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/experimental/wasteland-dome.jpg"),
             asset("/portfolio/experimental/illustrated-reader.jpg"),
             asset("/portfolio/experimental/starship-silhouette.jpg"),
+            asset("/portfolio/experimental/archive-sheet.jpg"),
           ],
         },
         {
@@ -820,6 +931,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/poster-surveillance-cyber.jpeg"),
             asset("/portfolio/optimized/poster-glitch-portrait.jpg"),
             asset("/portfolio/poster-focus.jpeg"),
+            asset("/portfolio/posters/experimental/avant-garde.jpg"),
+            asset("/portfolio/posters/experimental/editorial-layers.jpg"),
+            asset("/portfolio/posters/experimental/cyber-grid.jpg"),
+            asset("/portfolio/posters/experimental/metal-figure.jpg"),
           ],
         },
         {
@@ -841,6 +956,11 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/posters/commercial/new-opening.jpg"),
             asset("/portfolio/posters/commercial/avon.jpg"),
             asset("/portfolio/posters/commercial/crystal.jpg"),
+            asset("/portfolio/posters/commercial/cabbage-food.jpg"),
+            asset("/portfolio/posters/commercial/fruit-food.jpg"),
+            asset("/portfolio/posters/commercial/hotpot-base.jpg"),
+            asset("/portfolio/posters/commercial/beef-food.jpg"),
+            asset("/portfolio/posters/commercial/cat-snack.jpg"),
           ],
         },
         {
@@ -857,6 +977,9 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/posters/commercial/urban-residence.jpg"),
             asset("/portfolio/posters/commercial/chengdu-tour.jpg"),
             asset("/portfolio/posters/commercial/chongqing-tour.jpg"),
+            asset("/portfolio/posters/industrial/urban-residence-alt.jpg"),
+            asset("/portfolio/posters/industrial/blue-structure.jpg"),
+            asset("/portfolio/posters/industrial/jiangnan-shipyard-alt.jpg"),
           ],
         },
         {
@@ -874,6 +997,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/posters/portrait/child-red.jpg"),
             asset("/portfolio/posters/portrait/night-bartender.jpg"),
             asset("/portfolio/posters/portrait/sports-legend.jpg"),
+            asset("/portfolio/posters/portrait/sports-legend-alt.jpg"),
           ],
         },
       ],
