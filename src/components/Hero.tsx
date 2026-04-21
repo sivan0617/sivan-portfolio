@@ -8,6 +8,7 @@ interface HeroProps {
 
 export const Hero = ({ copy }: HeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const heroVideo = `${import.meta.env.BASE_URL}hero/crt-computer-screen.mp4`;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -98,34 +99,25 @@ export const Hero = ({ copy }: HeroProps) => {
               <div className="absolute inset-0 bg-accent-blue/5 blur-[100px] -z-10 opacity-40 shadow-[0_0_100px_rgba(59,130,246,0.1)]" />
 
               <div className="relative w-full h-full rounded-[25px] bg-[#050505] overflow-hidden border-[6px] border-[#1F1F1F] shadow-[inset_0_2px_10px_rgba(0,0,0,0.8)]">
-                <div className="absolute inset-0 screen-glare z-20 opacity-30 pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12)_0%,transparent_70%)] opacity-80" />
+                <video
+                  src={heroVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="hero-crt-video absolute inset-0 h-full w-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 screen-glare z-20 opacity-35 pointer-events-none" />
+                <div className="absolute inset-0 crt-mask z-20 pointer-events-none" />
 
-                <div className="absolute inset-0 bg-[#020202] flex flex-col items-center justify-center p-6 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_100%)]">
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.05, 1],
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="w-40 h-40 rounded-full bg-accent-blue/10 blur-3xl absolute"
-                  />
-
-                  <div className="relative z-10 w-full aspect-square flex items-center justify-center opacity-70">
-                    <div className="absolute inset-0 border border-white/[0.03] rounded-full" />
-                    <div className="absolute inset-4 border border-white/[0.02] rounded-full animate-spin [animation-duration:20s]" />
-                    <div className="absolute inset-8 border border-accent-blue/10 rounded-full animate-spin [animation-duration:15s] [animation-direction:reverse]" />
-                    <div className="font-serif text-4xl italic tracking-tighter text-white/90">{copy.monitorGlyph}</div>
-                  </div>
-
-                  <div className="mt-8 space-y-1.5 text-center">
-                    <div className="font-mono text-[7px] tracking-[0.5em] text-accent-blue/40 uppercase">{copy.stable}</div>
-                    <div className="flex gap-0.5 justify-center">
+                <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/70 to-transparent p-5">
+                  <div className="space-y-2 text-center">
+                    <div className="font-mono text-[7px] tracking-[0.5em] text-accent-blue/55 uppercase">{copy.stable}</div>
+                    <div className="mx-auto flex w-fit gap-0.5">
                       {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                        <div key={i} className="w-1.5 h-1 bg-accent-blue/15 rounded-[1px]" />
+                        <div key={i} className="w-1.5 h-1 rounded-[1px] bg-accent-blue/20" />
                       ))}
                     </div>
                   </div>

@@ -1,5 +1,12 @@
 export type Locale = "zh" | "en";
 
+export interface ProjectClip {
+  title: string;
+  video?: string;
+  externalUrl?: string;
+  poster?: string;
+}
+
 export interface ProjectEntry {
   slug: string;
   titleLines: string[];
@@ -10,6 +17,7 @@ export interface ProjectEntry {
   image: string;
   video?: string;
   externalUrl?: string;
+  clips?: ProjectClip[];
   gallery?: string[];
 }
 
@@ -89,8 +97,10 @@ export interface SiteCopy {
   };
   detail: {
     overview: string;
+    motion: string;
     gallery: string;
     watchExternal: string;
+    watchClip: string;
     backArchive: string;
     previous: string;
     next: string;
@@ -189,6 +199,14 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/redtail/cover.jpg"),
           video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
+          clips: [
+            {
+              title: "站内轻量版",
+              video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
+              poster: asset("/portfolio/redtail/cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
@@ -207,6 +225,14 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
+          clips: [
+            {
+              title: "成片主版本",
+              video: asset("/portfolio/mthayas/mthayas-film.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
+              poster: asset("/portfolio/mthayas/video-cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/mthayas-cover.jpg"),
             asset("/portfolio/mthayas-walk.jpeg"),
@@ -224,6 +250,20 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
+          clips: [
+            {
+              title: "3月28日 / 主版本",
+              video: asset("/portfolio/march-28/march-28.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
+              poster: asset("/portfolio/march-28/cover.jpg"),
+            },
+            {
+              title: "Kling 参赛版",
+              video: asset("/portfolio/kling/kling-film.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
+              poster: asset("/portfolio/kling/cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/kling/cover.jpg"),
@@ -242,6 +282,14 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/starship/video-cover.jpg"),
           video: asset("/portfolio/starship/starship-pov-web.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
+          clips: [
+            {
+              title: "站内轻量版",
+              video: asset("/portfolio/starship/starship-pov-web.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
+              poster: asset("/portfolio/starship/video-cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
@@ -257,6 +305,48 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "把之前漏掉的大量实验短视频按风格重新归档，集中成一页风格切片：系统故障、赛博通勤、超现实抒情和空间奇观，而不是继续散落在文件名里。",
           image: asset("/portfolio/experimental/crowd-digitized.jpg"),
+          clips: [
+            {
+              title: "系统阈值 / 人群数字化",
+              video: asset("/portfolio/experimental/videos/crowd-digitized.mp4"),
+              poster: asset("/portfolio/experimental/crowd-digitized.jpg"),
+            },
+            {
+              title: "系统阈值 / 消失",
+              video: asset("/portfolio/experimental/videos/system-vanishing.mp4"),
+              poster: asset("/portfolio/experimental/error-quarantine.jpg"),
+            },
+            {
+              title: "系统阈值 / 数字化",
+              video: asset("/portfolio/experimental/videos/system-digitizing.mp4"),
+              poster: asset("/portfolio/experimental/crowd-digitized.jpg"),
+            },
+            {
+              title: "赛博通勤 / 机车冲击",
+              video: asset("/portfolio/experimental/videos/motorcycle-impact.mp4"),
+              poster: asset("/portfolio/experimental/motorcycle-cloud.jpg"),
+            },
+            {
+              title: "超现实抒情 / 漂浮人物",
+              video: asset("/portfolio/experimental/videos/woman-floating.mp4"),
+              poster: asset("/portfolio/experimental/floating-field.jpg"),
+            },
+            {
+              title: "空间奇观 / 穿越镜头",
+              video: asset("/portfolio/experimental/videos/camera-pass-through.mp4"),
+              poster: asset("/portfolio/experimental/celestial-gate.jpg"),
+            },
+            {
+              title: "插画动态 / 读信女孩",
+              video: asset("/portfolio/experimental/videos/illustrated-reader.mp4"),
+              poster: asset("/portfolio/experimental/illustrated-reader.jpg"),
+            },
+            {
+              title: "空间光效 / 翻书丁达尔",
+              video: asset("/portfolio/experimental/videos/book-tyndall.mp4"),
+              poster: asset("/portfolio/experimental/book-tunnel.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/experimental/crt-threshold.jpg"),
             asset("/portfolio/experimental/error-quarantine.jpg"),
@@ -404,8 +494,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
     },
     detail: {
       overview: "项目简介",
+      motion: "动态版本",
       gallery: "项目图像",
       watchExternal: "去 B 站看完整版",
+      watchClip: "查看该版本",
       backArchive: "返回作品索引",
       previous: "上一个",
       next: "下一个",
@@ -500,6 +592,14 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/redtail/cover.jpg"),
           video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
+          clips: [
+            {
+              title: "Lightweight Site Cut",
+              video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
+              poster: asset("/portfolio/redtail/cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/redtail/cover.png"),
             asset("/portfolio/redtail/gun-shot.jpg"),
@@ -518,6 +618,14 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
+          clips: [
+            {
+              title: "Main Film Cut",
+              video: asset("/portfolio/mthayas/mthayas-film.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
+              poster: asset("/portfolio/mthayas/video-cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/mthayas-cover.jpg"),
             asset("/portfolio/mthayas-walk.jpeg"),
@@ -535,6 +643,20 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
+          clips: [
+            {
+              title: "March 28 / Main Cut",
+              video: asset("/portfolio/march-28/march-28.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
+              poster: asset("/portfolio/march-28/cover.jpg"),
+            },
+            {
+              title: "Kling Entry Version",
+              video: asset("/portfolio/kling/kling-film.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1kMdCBwERw/",
+              poster: asset("/portfolio/kling/cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/march-28/cover.jpg"),
             asset("/portfolio/kling/cover.jpg"),
@@ -553,6 +675,14 @@ export const siteContent: Record<Locale, SiteCopy> = {
           image: asset("/portfolio/starship/video-cover.jpg"),
           video: asset("/portfolio/starship/starship-pov-web.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
+          clips: [
+            {
+              title: "Lightweight Site Cut",
+              video: asset("/portfolio/starship/starship-pov-web.mp4"),
+              externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
+              poster: asset("/portfolio/starship/video-cover.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
@@ -568,6 +698,48 @@ export const siteContent: Record<Locale, SiteCopy> = {
           description:
             "A regrouped archive of the previously omitted motion studies, organized by style rather than file names: system glitches, cyber commuting, surreal lyricism, and spatial spectacle.",
           image: asset("/portfolio/experimental/crowd-digitized.jpg"),
+          clips: [
+            {
+              title: "System Threshold / Digitized Crowd",
+              video: asset("/portfolio/experimental/videos/crowd-digitized.mp4"),
+              poster: asset("/portfolio/experimental/crowd-digitized.jpg"),
+            },
+            {
+              title: "System Threshold / Vanishing",
+              video: asset("/portfolio/experimental/videos/system-vanishing.mp4"),
+              poster: asset("/portfolio/experimental/error-quarantine.jpg"),
+            },
+            {
+              title: "System Threshold / Digitizing",
+              video: asset("/portfolio/experimental/videos/system-digitizing.mp4"),
+              poster: asset("/portfolio/experimental/crowd-digitized.jpg"),
+            },
+            {
+              title: "Cyber Commuting / Motorcycle Impact",
+              video: asset("/portfolio/experimental/videos/motorcycle-impact.mp4"),
+              poster: asset("/portfolio/experimental/motorcycle-cloud.jpg"),
+            },
+            {
+              title: "Surreal Lyricism / Floating Figure",
+              video: asset("/portfolio/experimental/videos/woman-floating.mp4"),
+              poster: asset("/portfolio/experimental/floating-field.jpg"),
+            },
+            {
+              title: "Spatial Spectacle / Camera Pass-Through",
+              video: asset("/portfolio/experimental/videos/camera-pass-through.mp4"),
+              poster: asset("/portfolio/experimental/celestial-gate.jpg"),
+            },
+            {
+              title: "Illustrated Motion / Reading Girl",
+              video: asset("/portfolio/experimental/videos/illustrated-reader.mp4"),
+              poster: asset("/portfolio/experimental/illustrated-reader.jpg"),
+            },
+            {
+              title: "Spatial Light / Book Tyndall",
+              video: asset("/portfolio/experimental/videos/book-tyndall.mp4"),
+              poster: asset("/portfolio/experimental/book-tunnel.jpg"),
+            },
+          ],
           gallery: [
             asset("/portfolio/experimental/crt-threshold.jpg"),
             asset("/portfolio/experimental/error-quarantine.jpg"),
@@ -715,8 +887,10 @@ export const siteContent: Record<Locale, SiteCopy> = {
     },
     detail: {
       overview: "Overview",
+      motion: "Motion Versions",
       gallery: "Frames",
       watchExternal: "Watch Full Version on Bilibili",
+      watchClip: "Open Version",
       backArchive: "Back to Work",
       previous: "Previous",
       next: "Next",

@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { PageTransitionShell } from "../components/PageTransitionShell";
 import { RevealBlock } from "../components/RevealBlock";
-import { getProjectBySlug, type SiteCopy } from "../content";
+import { getProjectBySlug, type ProjectClip, type SiteCopy } from "../content";
 
 interface ProjectDetailPageProps {
   copy: SiteCopy;
@@ -32,8 +32,23 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
   const projectIndex = copy.work.projects.findIndex((entry) => entry.slug === project.slug);
   const previousProject = copy.work.projects[(projectIndex - 1 + copy.work.projects.length) % copy.work.projects.length];
   const nextProject = copy.work.projects[(projectIndex + 1) % copy.work.projects.length];
+  const playableClips: ProjectClip[] =
+    project.clips && project.clips.length > 0
+      ? project.clips
+      : project.video
+        ? [
+            {
+              title: project.title,
+              video: project.video,
+              externalUrl: project.externalUrl,
+              poster: project.image,
+            },
+          ]
+        : [];
+  const primaryClip = playableClips[0];
   const heroImage = project.gallery?.[0] ?? project.image;
-  const galleryFrames = project.video
+  const heroPoster = primaryClip?.poster ?? project.image;
+  const galleryFrames = primaryClip?.video
     ? project.gallery && project.gallery.length > 0
       ? project.gallery
       : [project.image]
@@ -67,10 +82,10 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
 
         <RevealBlock>
           <div className="relative overflow-hidden rounded-[2px] bg-black os-panel-shadow">
-            {project.video ? (
+            {primaryClip?.video ? (
               <video
-                src={project.video}
-                poster={project.image}
+                src={primaryClip.video}
+                poster={heroPoster}
                 controls
                 playsInline
                 preload="none"
@@ -101,9 +116,9 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                 {project.category} // {project.year}
               </div>
               <p className="text-white/45 leading-relaxed">{project.description}</p>
-              {project.externalUrl ? (
+              {primaryClip?.externalUrl ? (
                 <a
-                  href={project.externalUrl}
+                  href={primaryClip.externalUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-3 border border-white/12 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.34em] text-white/70 transition-colors hover:border-white/25 hover:text-white"
@@ -114,6 +129,52 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
               ) : null}
             </div>
           </RevealBlock>
+
+          {playableClips.length > 0 ? (
+            <RevealBlock className="lg:col-span-8 space-y-4">
+              <p className="font-mono text-[9px] uppercase tracking-[0.45em] text-accent-blue/70">{copy.detail.motion}</p>
+              <div className="grid grid-cols-1 gap-6">
+                {playableClips.map((clip, index) => (
+                  <div key={`${project.slug}-clip-${index}`} className="overflow-hidden rounded-[2px] border border-white/8 bg-black/60 p-3 md:p-4">
+                    <div className="mb-3 flex items-center justify-between gap-4">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.38em] text-white/55">
+                        {clip.title}
+                      </div>
+                      {clip.externalUrl ? (
+                        <a
+                          href={clip.externalUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.34em] text-accent-blue/80 transition-colors hover:text-white"
+                        >
+                          {copy.detail.watchExternal}
+                          <ArrowRight size={14} />
+                        </a>
+                      ) : null}
+                    </div>
+                    {clip.video ? (
+                      <video
+                        src={clip.video}
+                        poster={clip.poster ?? project.image}
+                        controls
+                        playsInline
+                        preload="none"
+                        className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+                      />
+                    ) : (
+                      <img
+                        src={clip.poster ?? project.image}
+                        alt={clip.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </RevealBlock>
+          ) : null}
 
           {galleryFrames.length > 0 ? (
             <RevealBlock className="lg:col-span-8 space-y-4">

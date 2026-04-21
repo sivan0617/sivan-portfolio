@@ -19,10 +19,13 @@ export const WorkIndexPage = ({ copy }: WorkIndexPageProps) => {
           </Link>
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             <div className="lg:col-span-7 space-y-5">
-              <p className="font-mono text-[10px] uppercase tracking-[0.5em] text-accent-blue/70">
-                {copy.work.indicator}
-              </p>
-              <h1 className="text-5xl md:text-7xl font-serif italic leading-[0.9] tracking-tighter text-white">
+              <div className="flex flex-wrap items-center gap-4">
+                <p className="archive-accent-pill font-mono text-[10px] uppercase tracking-[0.42em]">
+                  {copy.work.indicator}
+                </p>
+                <div className="h-px w-16 bg-gradient-to-r from-accent-blue/80 to-transparent" />
+              </div>
+              <h1 className="archive-title text-5xl md:text-7xl font-serif italic leading-[0.9] tracking-tighter text-white">
                 {copy.archive.title}
               </h1>
             </div>
