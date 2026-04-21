@@ -32,10 +32,10 @@ export const HomePage = ({ copy }: HomePageProps) => {
       <section id="home">
         <Hero copy={copy.hero} />
       </section>
-      <section id="work">
+      <section>
         <WorkSection copy={copy.work} />
       </section>
-      <section id="about">
+      <section>
         <AboutContact copy={copy.about} contactCopy={copy.contact} />
       </section>
     </PageTransitionShell>

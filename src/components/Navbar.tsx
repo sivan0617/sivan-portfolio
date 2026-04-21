@@ -51,16 +51,50 @@ export const Navbar = ({ copy, locale, onLocaleChange }: NavbarProps) => {
       transition={{ delay: 0.8, duration: 1.2 }}
       className="fixed top-0 left-0 w-full z-50 mix-blend-difference"
     >
-      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
-        <button
-          type="button"
-          onClick={() => handleNavigate("/")}
-          className="font-serif text-lg tracking-tighter hover:opacity-100 transition-opacity"
-        >
-          {copy.brand}
-        </button>
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 md:h-20 md:flex-row md:items-center md:justify-between md:gap-4 md:px-8 md:py-0">
+        <div className="flex items-center justify-between gap-4">
+          <button
+            type="button"
+            onClick={() => handleNavigate("/")}
+            className="shrink-0 font-serif text-base tracking-tighter transition-opacity hover:opacity-100 md:text-lg"
+          >
+            {copy.brand}
+          </button>
 
-        <div className="flex items-center gap-4 md:gap-8">
+          <div className="flex shrink-0 items-center rounded-full border border-white/15 bg-white/5 p-1 backdrop-blur-sm md:hidden">
+            {locales.map((code) => {
+              const isActive = locale === code;
+
+              return (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => onLocaleChange(code)}
+                  className={`rounded-full px-2.5 py-1.5 font-mono text-[8px] tracking-[0.28em] transition-colors duration-300 ${
+                    isActive ? "bg-white text-black" : "text-white/45 hover:text-white"
+                  }`}
+                >
+                  {copy.locales[code]}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3 md:gap-8">
+          <div className="flex items-center gap-1 overflow-x-auto pb-1 pr-1 md:hidden">
+            {copy.items.map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                onClick={() => handleNavigate(item.href)}
+                className="shrink-0 rounded-full border border-white/10 px-3 py-1.5 font-mono text-[8px] uppercase tracking-[0.22em] text-white/65 transition-[border-color,color] duration-300 hover:border-white/25 hover:text-white"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
           <div className="hidden md:flex items-center">
             {copy.items.map((item, index) => (
               <div key={item.label} className="flex items-center">
@@ -77,7 +111,7 @@ export const Navbar = ({ copy, locale, onLocaleChange }: NavbarProps) => {
             ))}
           </div>
 
-          <div className="flex items-center rounded-full border border-white/15 bg-white/5 p-1 backdrop-blur-sm">
+          <div className="hidden shrink-0 items-center rounded-full border border-white/15 bg-white/5 p-1 backdrop-blur-sm md:flex">
             {locales.map((code) => {
               const isActive = locale === code;
 
@@ -86,7 +120,7 @@ export const Navbar = ({ copy, locale, onLocaleChange }: NavbarProps) => {
                   key={code}
                   type="button"
                   onClick={() => onLocaleChange(code)}
-                  className={`rounded-full px-3 py-1.5 font-mono text-[9px] tracking-[0.35em] transition-colors duration-300 ${
+                  className={`rounded-full px-2.5 py-1.5 font-mono text-[8px] tracking-[0.28em] transition-colors duration-300 md:px-3 md:text-[9px] md:tracking-[0.35em] ${
                     isActive ? "bg-white text-black" : "text-white/45 hover:text-white"
                   }`}
                 >
@@ -97,7 +131,7 @@ export const Navbar = ({ copy, locale, onLocaleChange }: NavbarProps) => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-4rem)] h-[1px] bg-white/[0.05]" />
+      <div className="absolute bottom-0 left-1/2 h-[1px] w-[calc(100%-2rem)] -translate-x-1/2 bg-white/[0.05] md:w-[calc(100%-4rem)]" />
     </motion.nav>
   );
 };

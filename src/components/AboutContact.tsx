@@ -11,14 +11,14 @@ interface AboutContactProps {
 export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
   return (
     <div className="relative">
-      <section id="about" className="relative min-h-screen flex items-center bg-paper py-40 overflow-hidden text-ink">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
+      <section id="about" className="relative flex min-h-screen items-center overflow-hidden bg-paper py-24 text-ink md:py-40">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:px-6 lg:grid-cols-2 lg:gap-24">
           <div className="order-2 lg:order-1 relative">
             <motion.div
               initial={{ opacity: 0, scale: 1.05 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
-              className="aspect-[4/5] w-full max-w-sm rounded-[2px] overflow-hidden border border-ink/5 mx-auto lg:mx-0 shadow-2xl shadow-ink/10"
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2px] border border-ink/5 shadow-2xl shadow-ink/10 lg:mx-0"
             >
               <img
                 src={copy.portraitImage}
@@ -28,28 +28,29 @@ export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
                 className="w-full h-full object-cover"
               />
             </motion.div>
-            <div className="absolute -left-12 top-1/2 -translate-y-1/2 font-mono text-[7px] tracking-[0.4em] uppercase vertical-rl rotate-180 opacity-30">
+            <div className="absolute -left-10 top-1/2 hidden -translate-y-1/2 font-mono text-[7px] tracking-[0.4em] uppercase opacity-30 md:block vertical-rl rotate-180">
               {copy.sideLabel}
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 space-y-16">
+          <div className="order-1 space-y-10 lg:order-2 lg:space-y-16">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 0.82, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-[38rem]"
             >
-              <span className="font-mono text-[9px] tracking-[0.6em] text-ink/40 mb-10 block uppercase">
+              <span className="mb-6 block font-mono text-[8px] uppercase tracking-[0.34em] text-ink/42 md:mb-8 md:text-[9px] md:tracking-[0.54em]">
                 {copy.eyebrow}
               </span>
-              <h2 className="text-5xl md:text-7xl font-serif italic mb-12 leading-[0.95] tracking-tighter">
+              <h2 className="mb-6 text-[2.9rem] font-serif italic leading-[0.94] tracking-[-0.05em] md:mb-10 md:text-7xl">
                 {copy.heading.before} <span className="not-italic">{copy.heading.normal}</span> {copy.heading.middle}{" "}
                 <span className="text-accent-blue/80">{copy.heading.accent}</span> {copy.heading.after}
               </h2>
-              <p className="text-xl text-ink/70 leading-relaxed font-light font-sans max-w-xl">{copy.body}</p>
+              <p className="max-w-[32rem] text-base leading-[1.9] text-ink/70 md:text-xl">{copy.body}</p>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-12 pt-12 border-t border-ink/10 font-mono text-[9px] uppercase tracking-[0.3em] text-ink/40">
+            <div className="grid grid-cols-1 gap-8 border-t border-ink/10 pt-8 font-mono text-[8px] uppercase tracking-[0.22em] text-ink/40 md:grid-cols-2 md:gap-12 md:pt-12 md:text-[9px] md:tracking-[0.28em]">
               <div className="space-y-4">
                 <span className="text-ink font-bold tracking-[0.5em] block">{copy.disciplinesLabel}</span>
                 <ul className="space-y-2 opacity-80">
@@ -71,42 +72,42 @@ export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
         </div>
       </section>
 
-      <section id="contact" className="relative min-h-screen flex flex-col items-center justify-center bg-bg-primary pt-40 pb-20 text-center overflow-hidden">
+      <section id="contact" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-bg-primary px-5 pt-28 pb-20 text-center md:px-6 md:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="space-y-12"
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="space-y-8"
         >
-          <h2 className="text-5xl md:text-8xl font-serif italic tracking-tighter chromatic-text">
+          <h2 className="text-pretty mx-auto max-w-[10ch] text-[3rem] font-serif italic tracking-[-0.05em] chromatic-text md:max-w-none md:text-8xl">
             {contactCopy.heading}
           </h2>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/connect"
-                className="group relative flex px-12 py-6 rounded-full border border-white/20 overflow-hidden hover:border-white transition-colors"
+                className="group relative flex overflow-hidden rounded-full border border-white/20 px-8 py-4 transition-[border-color,transform] duration-300 hover:border-white md:px-12 md:py-6"
               >
-                <span className="relative z-10 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em]">
+                <span className="relative z-10 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] md:text-xs md:tracking-[0.2em]">
                   <Mail size={16} /> {contactCopy.primaryCta}
                 </span>
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
+                <div className="absolute inset-0 bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-5" />
               </Link>
             </motion.div>
 
             <Link
               to="/connect"
-              className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.4em] text-text-primary/40 hover:text-text-primary transition-colors"
+              className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.28em] text-text-primary/40 transition-[color,transform] duration-300 hover:translate-x-1 hover:text-text-primary md:text-[10px] md:tracking-[0.36em]"
             >
               {contactCopy.secondaryCta} <ArrowUpRight size={12} />
             </Link>
           </div>
         </motion.div>
 
-        <div className="absolute bottom-12 w-full px-6 flex flex-col md:flex-row justify-between items-center text-[8px] font-mono tracking-[0.3em] text-white/20 gap-4">
+        <div className="absolute bottom-8 flex w-full flex-col items-center justify-between gap-3 px-5 text-[7px] font-mono tracking-[0.2em] text-white/20 md:bottom-12 md:flex-row md:gap-4 md:px-6 md:text-[8px] md:tracking-[0.3em]">
           <div>{contactCopy.footer}</div>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {contactCopy.socials.map((social) => (
               social.href ? (
                 <a key={social.label} href={social.href} className="hover:text-white transition-colors">

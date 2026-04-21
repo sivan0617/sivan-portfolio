@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "motion/react";
+import { motion, useScroll, useTransform, useSpring, useMotionValue, useReducedMotion } from "motion/react";
 import { useRef, useEffect } from "react";
 import type { SiteCopy } from "../content";
 
@@ -8,6 +8,7 @@ interface HeroProps {
 
 export const Hero = ({ copy }: HeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
   const heroVideo = `${import.meta.env.BASE_URL}hero/crt-computer-screen.mp4`;
 
   const { scrollYProgress } = useScroll({
@@ -39,65 +40,95 @@ export const Hero = ({ copy }: HeroProps) => {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: reduceMotion ? 0 : 0.14,
+        delayChildren: reduceMotion ? 0 : 0.18,
+      },
+    },
+  };
+  const textReveal = {
+    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] as const },
+    },
+  };
 
   return (
     <section
       ref={containerRef}
       id="home"
-      className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20"
     >
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 md:px-6 lg:grid-cols-12 lg:gap-14"
+      >
         <motion.div style={{ y: y1, opacity }} className="z-10 lg:col-span-7">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
+            variants={containerVariants}
+            className="max-w-[40rem] space-y-5 md:space-y-8"
           >
-            <span className="font-mono text-[11px] tracking-[0.5em] text-accent-violet mb-8 block uppercase opacity-80">
+            <motion.span
+              variants={textReveal}
+              className="block font-mono text-[8px] uppercase tracking-[0.36em] text-accent-violet/80 md:text-[10px] md:tracking-[0.46em]"
+            >
               {copy.eyebrow}
-            </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-light leading-[0.9] tracking-tighter mb-10 italic">
+            </motion.span>
+            <motion.h1
+              variants={textReveal}
+              className="text-pretty max-w-[9ch] text-[3.1rem] font-serif font-light italic leading-[0.9] tracking-[-0.05em] sm:text-[3.7rem] md:max-w-none md:text-7xl lg:text-[5.5rem]"
+            >
               {copy.titleStart}
               <br />
               <span className="text-accent-blue not-italic">{copy.titleAccent}</span>
               {copy.titleEnd}
               <br />
               {copy.titleLast}
-            </h1>
-            <div className="flex items-center gap-6">
-              <div className="w-10 h-[1px] bg-white/20" />
-              <p className="font-mono text-[9px] tracking-[0.4em] text-text-primary/30 uppercase">
+            </motion.h1>
+            <motion.div
+              variants={textReveal}
+              className="flex max-w-[18rem] items-start gap-4 pt-1 md:max-w-md md:gap-5"
+            >
+              <div className="mt-2 h-px w-8 shrink-0 bg-white/18 md:w-12" />
+              <p className="text-pretty font-mono text-[8px] uppercase tracking-[0.24em] text-text-primary/38 md:text-[10px] md:tracking-[0.34em]">
                 {copy.scrollHint}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 
         <motion.div
           style={{ y: y2, scale, rotateX, rotateY }}
-          className="relative lg:col-span-5 flex justify-center lg:justify-end perspective-1000"
+          className="perspective-1000 relative flex justify-center lg:col-span-5 lg:justify-end"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 2, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
+            initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.03, y: 22 }}
+            animate={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.95, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="relative w-full"
           >
             <motion.div
-              animate={{
-                y: [0, -14, 0],
-                rotateX: [-1.5, 1.5, -1.5],
-                rotateY: [-2, 2, -2],
+              animate={reduceMotion ? undefined : {
+                y: [0, -10, 0],
+                rotateX: [-1.2, 1.2, -1.2],
+                rotateY: [-1.6, 1.6, -1.6],
               }}
-              transition={{
-                duration: 10,
+              transition={reduceMotion ? undefined : {
+                duration: 11,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="hero-video-stage relative ml-auto aspect-[4/5] w-[min(35rem,90vw)] md:w-[min(40rem,84vw)] lg:w-[min(44rem,38vw)] overflow-hidden"
+              className="hero-video-stage relative ml-auto aspect-[4/5] w-[min(24rem,88vw)] overflow-hidden md:w-[min(40rem,84vw)] lg:w-[min(43rem,38vw)]"
             >
-              <div className="absolute inset-0 rounded-[2rem] bg-accent-blue/8 blur-[90px] opacity-55" />
-              <div className="relative h-full w-full overflow-hidden rounded-[1.25rem]">
+              <div className="absolute inset-0 rounded-[1.4rem] bg-accent-blue/10 blur-[80px] opacity-60 md:rounded-[2rem] md:blur-[90px]" />
+              <div className="relative h-full w-full overflow-hidden rounded-[1rem] md:rounded-[1.25rem]">
                 <video
                   src={heroVideo}
                   autoPlay
@@ -107,15 +138,15 @@ export const Hero = ({ copy }: HeroProps) => {
                   preload="metadata"
                   className="hero-crt-video absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-6 py-6">
-                  <div className="space-y-2">
-                    <div className="font-mono text-[8px] tracking-[0.48em] text-accent-blue/60 uppercase">{copy.stable}</div>
+                <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-4 py-4 md:px-7 md:py-7">
+                  <div className="space-y-2 md:space-y-2.5">
+                    <div className="font-mono text-[6px] tracking-[0.34em] text-accent-blue/65 uppercase md:text-[8px] md:tracking-[0.48em]">{copy.stable}</div>
                     <div className="flex gap-1">
                       {[0, 1, 2, 3, 4, 5, 6].map((i) => (
                         <div key={i} className="h-1 w-4 rounded-full bg-accent-blue/20" />
                       ))}
                     </div>
-                    <div className="font-mono text-[7px] tracking-[0.34em] text-white/28 uppercase">{copy.hardwareId}</div>
+                    <div className="font-mono text-[6px] tracking-[0.24em] text-white/32 uppercase md:text-[7px] md:tracking-[0.34em]">{copy.hardwareId}</div>
                   </div>
                 </div>
               </div>
@@ -125,7 +156,7 @@ export const Hero = ({ copy }: HeroProps) => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-white/[0.02] rounded-full pointer-events-none -z-20 scale-[1.2]" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-white/[0.04] rounded-full pointer-events-none -z-20" />
         </motion.div>
-      </div>
+      </motion.div>
 
       <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-bg-primary to-transparent z-20" />
     </section>

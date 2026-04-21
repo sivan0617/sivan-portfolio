@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import type { SiteCopy } from "../content";
 
 interface BootScreenProps {
@@ -8,6 +8,7 @@ interface BootScreenProps {
 }
 
 export const BootScreen: React.FC<BootScreenProps> = ({ copy, onComplete }) => {
+  const reduceMotion = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState<string>(copy.initialStatus);
   const [isReady, setIsReady] = useState(false);
@@ -44,38 +45,53 @@ export const BootScreen: React.FC<BootScreenProps> = ({ copy, onComplete }) => {
 
   return (
     <motion.div
-      exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[100] bg-bg-primary flex items-center justify-center p-6"
+      exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.02, filter: "blur(10px)" }}
+      transition={{ duration: reduceMotion ? 0.2 : 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-primary p-5 md:p-6"
       onClick={() => isReady && onComplete()}
     >
-      <div className="w-full max-w-lg space-y-12 font-mono">
+      <div className="w-full max-w-lg space-y-8 font-mono md:space-y-12">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="relative aspect-[4/3] w-full rounded-[40px] border border-accent-blue/40 bg-accent-blue/10 os-panel-shadow flex flex-col items-center justify-center p-12 overflow-hidden group"
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.97, y: 18 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: reduceMotion ? 0.2 : 0.78, ease: [0.22, 1, 0.36, 1] }}
+          className="group relative flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden rounded-[28px] border border-accent-blue/40 bg-accent-blue/10 p-8 os-panel-shadow md:rounded-[40px] md:p-12"
         >
-          <div className="absolute inset-8 rounded-[25px] border border-accent-blue/20" />
+          <div className="absolute inset-5 rounded-[18px] border border-accent-blue/20 md:inset-8 md:rounded-[25px]" />
+          <motion.div
+            initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scaleX: 0.92 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.85, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-accent-blue/40 to-transparent md:inset-x-10 md:top-10"
+          />
 
           <div className="relative z-10 space-y-2 text-center">
             <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-6xl md:text-8xl font-serif tracking-tighter chromatic-text italic"
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.64, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-5xl font-serif italic tracking-[-0.05em] chromatic-text md:text-8xl"
             >
               {copy.mark}
             </motion.h1>
-            <div className="text-[9px] tracking-[0.5em] text-accent-blue/60 uppercase">{copy.protocol}</div>
+            <motion.div
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.58, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[8px] tracking-[0.28em] text-accent-blue/60 uppercase md:text-[9px] md:tracking-[0.46em]"
+            >
+              {copy.protocol}
+            </motion.div>
           </div>
         </motion.div>
 
-        <div className="space-y-6 px-4">
+        <div className="space-y-5 px-1 md:space-y-6 md:px-4">
           <div className="flex justify-between items-end">
             <div className="space-y-1">
-              <div className="text-[10px] text-accent-blue/60 uppercase tracking-widest">{copy.log}</div>
-              <div className="text-sm tracking-tight text-text-primary/90">{status}</div>
+              <div className="text-[8px] uppercase tracking-[0.24em] text-accent-blue/60 md:text-[10px] md:tracking-[0.34em]">{copy.log}</div>
+              <div className="text-[13px] tracking-tight text-text-primary/90 md:text-sm">{status}</div>
             </div>
-            <div className="text-xl font-bold text-accent-blue">{Math.floor(progress)}%</div>
+            <div className="text-lg font-bold text-accent-blue md:text-xl">{Math.floor(progress)}%</div>
           </div>
 
           <div className="flex gap-1.5 h-3">
@@ -92,7 +108,7 @@ export const BootScreen: React.FC<BootScreenProps> = ({ copy, onComplete }) => {
             ))}
           </div>
 
-          <div className="h-4 flex items-center justify-center pt-8">
+          <div className="flex h-4 items-center justify-center pt-5 md:pt-8">
             <AnimatePresence>
               {isReady && (
                 <motion.div
@@ -104,11 +120,11 @@ export const BootScreen: React.FC<BootScreenProps> = ({ copy, onComplete }) => {
                     repeatType: "reverse",
                     ease: "easeInOut",
                   }}
-                  className="text-[11px] tracking-[0.4em] text-accent-blue uppercase cursor-pointer flex items-center gap-4"
+                  className="flex cursor-pointer items-center gap-3 text-[10px] uppercase tracking-[0.24em] text-accent-blue md:gap-4 md:text-[11px] md:tracking-[0.36em]"
                 >
-                  <div className="w-10 h-[1px] bg-accent-blue/30" />
+                  <div className="h-[1px] w-8 bg-accent-blue/30 md:w-10" />
                   {copy.ready}
-                  <div className="w-10 h-[1px] bg-accent-blue/30" />
+                  <div className="h-[1px] w-8 bg-accent-blue/30 md:w-10" />
                 </motion.div>
               )}
             </AnimatePresence>

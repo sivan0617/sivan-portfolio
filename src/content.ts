@@ -181,7 +181,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "品牌 / 珠宝视觉",
           year: "2026",
           description:
-            "围绕矿物感、冷白材质与精品包装展开的一套品牌视觉系统，覆盖识别、包装、空间与数字触点。",
+            "我用矿物感和冷白材质，做了一套从识别到包装都能落地的品牌视觉。",
           image: asset("/portfolio/kuang/cover.jpg"),
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
@@ -200,7 +200,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "广告 / 比赛项目",
           year: "2026",
           description:
-            "以高速拦截、武器动势和高压广告语气构建的一支比赛广告短片，现阶段已收敛出主成片和关键分镜画面。",
+            "我把拦截感和武器动势压进一支高压广告短片里，重点是成片节奏和关键镜头。",
           image: asset("/portfolio/redtail/cover.jpg"),
           video: asset("/portfolio/redtail/redtail-ad-web.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1dHdCBpEUe/",
@@ -226,7 +226,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "藏地时尚 / 影像成片",
           year: "2026",
           description:
-            "围绕藏地服饰、自然地貌与仪式感造型展开的时尚影像，画面重点落在人物气息、风感和场域氛围的建立。",
+            "我把藏地服饰、风感和人物气息收进一支时尚影像里，重点是氛围和人物状态。",
           image: asset("/portfolio/mthayas/video-cover.jpg"),
           video: asset("/portfolio/mthayas/mthayas-film.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV13SdkBLEmM/",
@@ -251,7 +251,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "藏地时尚 / 短片变体",
           year: "2026",
           description:
-            "延续同一组藏地时尚母题的短片表达，更靠近人物凝视、姿态和近景情绪，保留两种节奏不同的剪辑版本。",
+            "这是同一组母题的另一版短片，我把镜头拉得更近，也保留了两种不同节奏。",
           image: asset("/portfolio/march-28/cover.jpg"),
           video: asset("/portfolio/march-28/march-28.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1ZjdCBdEqG/",
@@ -283,7 +283,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "藏地时尚 / 静帧图集",
           year: "2026",
           description:
-            "从同一组视觉母题延展开的静帧图像，聚焦服饰层次、发型结构、雪山轮廓和人物状态之间的关系。",
+            "我把同一组时尚影像拆成静帧，去看服饰层次、发型结构和人物状态。",
           image: asset("/portfolio/tibet-editorial/walk.jpg"),
           gallery: [
             asset("/portfolio/tibet-editorial/profile.jpg"),
@@ -300,7 +300,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "视频概念 / 科幻 POV",
           year: "2025",
           description:
-            "以第一视角飞船起飞为主题的短视频概念，画面重点放在城市层级、飞行载具与赛博氛围的快速建立。",
+            "我用第一视角做了一段飞船起飞概念，重点是城市层级和起飞瞬间的压迫感。",
           image: asset("/portfolio/starship/video-cover.jpg"),
           video: asset("/portfolio/starship/starship-pov-web.mp4"),
           externalUrl: "https://www.bilibili.com/video/BV1GmdkB2Eto/",
@@ -325,7 +325,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "实验影像 / 风格合集",
           year: "2025",
           description:
-            "把不同气质的动态实验集中到同一页里，按系统故障、赛博通勤、超现实抒情和空间奇观四种视觉语言展开。",
+            "我把几组动态实验放在一起，集中看故障感、通勤感和超现实镜头的差别。",
           image: asset("/portfolio/experimental/crowd-digitized.jpg"),
           clips: [
             {
@@ -395,7 +395,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 实验风格",
           year: "2025",
           description:
-            "围绕赛博、监控、故障和高对比排版展开的一组海报，重点是图像压迫感、文字张力和实验气质。",
+            "我把赛博、监控和故障感压进一组海报里，重点是图像张力和字的攻击性。",
           image: asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-y2k-cyber.jpg"),
@@ -411,7 +411,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 高饱和消费视觉",
           year: "2025",
           description:
-            "以饮品、餐饮、零售与消费品图像构成的一组高饱和商业海报，强调色彩冲击、货架感和消费欲望。",
+            "我用高饱和色彩做了一组消费海报，重点是货架感和直接的商业冲击。",
           image: asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-strawberry-soda.jpg"),
@@ -432,7 +432,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 城市空间 / 工业冷调",
           year: "2025",
           description:
-            "以城市、地产、文旅和工业主题为基础的一组冷调海报，画面重心放在空间感、建筑感和金属气息。",
+            "我把城市、工业和建筑感收进一组冷调海报里，重点是空间和金属气息。",
           image: asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
           gallery: [
             asset("/portfolio/optimized/poster-jiangnan-shipyard.jpg"),
@@ -448,7 +448,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           category: "海报 / 人物叙事 / 潮流肖像",
           year: "2025",
           description:
-            "以人物主体、表情张力和画面叙事为核心的一组肖像海报，整体更靠近潮流摄影和角色化表达。",
+            "我用人物主体和表情张力做了一组肖像海报，整体更靠近潮流摄影的语气。",
           image: asset("/portfolio/posters/portrait/child-magenta.jpg"),
           gallery: [
             asset("/portfolio/posters/portrait/you-me.jpg"),
@@ -480,25 +480,24 @@ export const siteContent: Record<Locale, SiteCopy> = {
       focus: ["数字风与超前艺术表达", "广告 / 影像项目合作", "品牌视觉与内容延展"],
     },
     contact: {
-      heading: "如果你在寻找更有辨识度的视觉表达，欢迎联系我。",
-      primaryCta: "进入联系方式",
-      secondaryCta: "查看合作渠道",
+      heading: "有项目，直接联系我。",
+      primaryCta: "联系方式",
+      secondaryCta: "合作入口",
       pageEyebrow: "// contact / collaboration",
       pageTitle: "联系与合作",
-      pageBody:
-        "目前开放全职机会，也接受品牌视觉、广告影像与创意合作项目。你可以通过邮件或社交平台联系我，简单说明项目方向、合作需求或岗位信息即可。",
-      availability: "优先方向：全职 / 品牌项目合作 / 广告与影像项目合作",
+      pageBody: "我接全职，也接品牌视觉和影像合作。",
+      availability: "全职 / 品牌合作 / 影像合作",
       methods: [
         {
           label: "邮箱",
           value: "xanven@foxmail.com",
           href: "mailto:xanven@foxmail.com",
-          note: "建议用于正式合作、岗位沟通与作品索取",
+          note: "正式合作直接发邮件",
         },
         {
           label: "微信",
           value: "Yaooooooxw",
-          note: "可直接通过微信添加，适合更快沟通合作与岗位机会",
+          note: "聊得快就加微信",
         },
         {
           label: "小红书",
@@ -899,25 +898,25 @@ export const siteContent: Record<Locale, SiteCopy> = {
       focus: ["Futuristic Digital Aesthetics", "Advertising & Moving-Image Collaborations", "Brand Visual Extensions"],
     },
     contact: {
-      heading: "If you need more distinctive visual work, let's talk.",
-      primaryCta: "Open Contact Page",
-      secondaryCta: "View Contact Channels",
+      heading: "If you have a project, contact me.",
+      primaryCta: "Contact",
+      secondaryCta: "Channels",
       pageEyebrow: "// contact / collaboration",
       pageTitle: "Contact & Collaboration",
       pageBody:
-        "I am currently open to full-time roles as well as branding, advertising film, and creative visual collaborations. Reach out by email or social platforms with your brief, role, or timeline.",
-      availability: "Open to full-time roles, branding projects, and advertising or moving-image collaborations",
+        "I am open to full-time roles, branding work, and moving-image collaborations.",
+      availability: "Full-time / Branding / Moving-image",
       methods: [
         {
           label: "Email",
           value: "xanven@foxmail.com",
           href: "mailto:xanven@foxmail.com",
-          note: "Best for formal inquiries, roles, and project discussions",
+          note: "Best for formal inquiries",
         },
         {
           label: "WeChat",
           value: "Yaooooooxw",
-          note: "Use WeChat for faster communication on collaborations and roles",
+          note: "Faster for direct contact",
         },
         {
           label: "Xiaohongshu",
