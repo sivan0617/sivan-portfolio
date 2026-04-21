@@ -94,10 +94,10 @@ export const Hero = ({ copy }: HeroProps) => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="hero-video-stage relative ml-auto aspect-[4/5] w-[min(34rem,88vw)] md:w-[min(38rem,82vw)] lg:w-[min(42rem,36vw)] overflow-hidden"
+              className="hero-video-stage relative ml-auto aspect-[4/5] w-[min(35rem,90vw)] md:w-[min(40rem,84vw)] lg:w-[min(44rem,38vw)] overflow-hidden"
             >
-              <div className="absolute inset-0 rounded-[2.5rem] bg-accent-blue/10 blur-[110px] opacity-70" />
-              <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
+              <div className="absolute inset-0 rounded-[2rem] bg-accent-blue/8 blur-[90px] opacity-55" />
+              <div className="relative h-full w-full overflow-hidden rounded-[1.25rem]">
                 <video
                   src={heroVideo}
                   autoPlay
@@ -107,8 +107,6 @@ export const Hero = ({ copy }: HeroProps) => {
                   preload="metadata"
                   className="hero-crt-video absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 screen-glare z-20 opacity-25 pointer-events-none" />
-                <div className="absolute inset-0 crt-mask z-20 pointer-events-none" />
                 <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-6 py-6">
                   <div className="space-y-2">
                     <div className="font-mono text-[8px] tracking-[0.48em] text-accent-blue/60 uppercase">{copy.stable}</div>

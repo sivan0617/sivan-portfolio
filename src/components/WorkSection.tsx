@@ -75,18 +75,16 @@ export const WorkSection = ({ copy }: WorkSectionProps) => {
                   transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
                   className="lg:col-span-8 relative aspect-[16/8] overflow-hidden rounded-[2px] os-panel-shadow group bg-black block"
                 >
-                  <div className="absolute inset-0 screen-glare opacity-20 z-10" />
-
                   <img
                     src={project.image}
                     alt={project.title}
                     loading={index === 0 ? "eager" : "lazy"}
                     decoding="async"
                     fetchPriority={index === 0 ? "high" : "auto"}
-                    className="w-full h-full object-cover brightness-[0.82] saturate-[1.08] contrast-[1.04] group-hover:scale-105 group-hover:brightness-[0.95] group-hover:saturate-[1.16] transition-all duration-[4s] ease-out"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[4s] ease-out"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/12 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/12 via-transparent to-transparent opacity-70" />
                   <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(59,130,246,0.14)]" />
 
                   <div className="absolute inset-4 border border-white/[0.03] pointer-events-none" />

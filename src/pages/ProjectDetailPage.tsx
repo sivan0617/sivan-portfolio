@@ -89,7 +89,7 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                 controls
                 playsInline
                 preload="none"
-                className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+                className="w-full aspect-[16/8] object-cover"
               />
             ) : (
               <img
@@ -98,7 +98,7 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+                className="w-full aspect-[16/8] object-cover"
               />
             )}
             <div className="absolute inset-0 bg-black/10 pointer-events-none" />
@@ -159,7 +159,7 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                         controls
                         playsInline
                         preload="none"
-                        className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+                        className="w-full aspect-[16/8] object-cover"
                       />
                     ) : (
                       <img
@@ -167,7 +167,7 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                         alt={clip.title}
                         loading="lazy"
                         decoding="async"
-                        className="w-full aspect-[16/8] object-cover brightness-95 saturate-110"
+                        className="w-full aspect-[16/8] object-cover"
                       />
                     )}
                   </div>
@@ -187,7 +187,7 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                       alt={project.title}
                       loading="lazy"
                       decoding="async"
-                      className="w-full aspect-[4/3] object-cover brightness-95 saturate-110"
+                      className="w-full aspect-[4/3] object-cover"
                     />
                   </div>
                 ))}

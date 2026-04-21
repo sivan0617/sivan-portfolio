@@ -55,7 +55,6 @@ export const BootScreen: React.FC<BootScreenProps> = ({ copy, onComplete }) => {
           animate={{ opacity: 1, scale: 1 }}
           className="relative aspect-[4/3] w-full rounded-[40px] border border-accent-blue/40 bg-accent-blue/10 os-panel-shadow flex flex-col items-center justify-center p-12 overflow-hidden group"
         >
-          <div className="absolute inset-0 screen-glare opacity-50 group-hover:opacity-70 transition-opacity duration-1000" />
           <div className="absolute inset-8 rounded-[25px] border border-accent-blue/20" />
 
           <div className="relative z-10 space-y-2 text-center">

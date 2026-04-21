@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence } from "motion/react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { BootScreen } from "./components/BootScreen";
-import { Effects } from "./components/Effects";
 import { Navbar } from "./components/Navbar";
 import { SiteFooter } from "./components/SiteFooter";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -77,7 +76,6 @@ export default function App() {
         ) : (
           <div key="site" className="relative min-h-screen">
             <ScrollToTop pathname={location.pathname} />
-            <Effects />
             <Navbar copy={copy.navbar} locale={locale} onLocaleChange={setLocale} />
             <AnimatePresence mode="wait" initial={false}>
               <Routes location={location} key={location.pathname}>

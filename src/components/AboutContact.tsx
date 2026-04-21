@@ -11,8 +11,6 @@ export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
   return (
     <div className="relative">
       <section id="about" className="relative min-h-screen flex items-center bg-paper py-40 overflow-hidden text-ink">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
           <div className="order-2 lg:order-1 relative">
             <motion.div
@@ -26,7 +24,7 @@ export const AboutContact = ({ copy, contactCopy }: AboutContactProps) => {
                 alt={copy.portraitAlt}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover grayscale brightness-110 contrast-125 mix-blend-multiply opacity-90"
+                className="w-full h-full object-cover"
               />
             </motion.div>
             <div className="absolute -left-12 top-1/2 -translate-y-1/2 font-mono text-[7px] tracking-[0.4em] uppercase vertical-rl rotate-180 opacity-30">
