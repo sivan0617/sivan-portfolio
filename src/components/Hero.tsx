@@ -8,6 +8,8 @@ interface HeroProps {
 
 export const Hero = ({ copy }: HeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const frameRef = useRef<number | null>(null);
   const reduceMotion = useReducedMotion();
   const heroVideo = `${import.meta.env.BASE_URL}hero/crt-computer-screen.mp4`;
 
@@ -35,6 +37,43 @@ export const Hero = ({ copy }: HeroProps) => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const syncVideoToScroll = () => {
+      if (!video.duration || Number.isNaN(video.duration)) return;
+      const targetTime = Math.min(scrollYProgress.get() * 2, 1) * video.duration;
+
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+      }
+
+      frameRef.current = requestAnimationFrame(() => {
+        if (Math.abs(video.currentTime - targetTime) > 0.033) {
+          video.currentTime = targetTime;
+        }
+      });
+    };
+
+    const handleLoadedMetadata = () => {
+      video.pause();
+      syncVideoToScroll();
+    };
+
+    video.pause();
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    const unsubscribe = scrollYProgress.on("change", syncVideoToScroll);
+
+    return () => {
+      unsubscribe();
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+      }
+    };
+  }, [scrollYProgress]);
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -91,10 +130,9 @@ export const Hero = ({ copy }: HeroProps) => {
             <div className="relative h-full w-full overflow-hidden">
               <div className="absolute inset-y-0 right-[-6%] w-[74%] overflow-hidden md:right-[-8%] md:w-[74%] lg:right-[-10%] lg:w-[74%] xl:right-[-11%] xl:w-[74%]">
                 <video
+                  ref={videoRef}
                   src={heroVideo}
-                  autoPlay
                   muted
-                  loop
                   playsInline
                   preload="metadata"
                   className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[76%_center] md:object-[80%_center] lg:object-[83%_center] xl:object-[85%_center]"
