@@ -96,7 +96,7 @@ export const Hero = ({ copy }: HeroProps) => {
                 loop
                 playsInline
                 preload="metadata"
-                className="hero-crt-video absolute inset-0 h-full w-full object-cover"
+                className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[64%_center] lg:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(74,144,226,0.14),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.74)_0%,rgba(0,0,0,0.45)_34%,rgba(0,0,0,0.18)_58%,rgba(0,0,0,0.62)_100%)]" />
               <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-4 py-4 md:px-7 md:py-7">
@@ -124,7 +124,7 @@ export const Hero = ({ copy }: HeroProps) => {
         animate="visible"
         className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-6"
       >
-        <motion.div style={{ y: y1, opacity }} className="z-10">
+        <motion.div style={{ y: y1, opacity }} className="z-10 lg:-mt-24 xl:-mt-28">
           <motion.div
             variants={containerVariants}
             className="max-w-[40rem] space-y-5 md:space-y-8"
