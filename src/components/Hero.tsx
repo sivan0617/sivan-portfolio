@@ -89,7 +89,7 @@ export const Hero = ({ copy }: HeroProps) => {
           >
             <div className="absolute inset-0 bg-accent-blue/10 blur-[120px] opacity-60" />
             <div className="relative h-full w-full overflow-hidden">
-              <div className="absolute inset-y-0 left-0 w-[70%] translate-x-[38%] overflow-hidden md:w-[70%] md:translate-x-[38%] lg:w-[70%] lg:translate-x-[38%] xl:w-[70%] xl:translate-x-[38%]">
+              <div className="absolute inset-y-0 right-[-6%] w-[74%] overflow-hidden md:right-[-8%] md:w-[74%] lg:right-[-10%] lg:w-[74%] xl:right-[-11%] xl:w-[74%]">
                 <video
                   src={heroVideo}
                   autoPlay
@@ -97,7 +97,7 @@ export const Hero = ({ copy }: HeroProps) => {
                   loop
                   playsInline
                   preload="metadata"
-                  className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[84%_center] md:object-[86%_center] lg:object-[88%_center] xl:object-[90%_center]"
+                  className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[76%_center] md:object-[80%_center] lg:object-[83%_center] xl:object-[85%_center]"
                 />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(74,144,226,0.14),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.84)_0%,rgba(0,0,0,0.56)_32%,rgba(0,0,0,0.18)_57%,rgba(0,0,0,0.64)_100%)]" />
               </div>
