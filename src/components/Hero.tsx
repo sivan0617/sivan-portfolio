@@ -65,12 +65,66 @@ export const Hero = ({ copy }: HeroProps) => {
       className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20"
     >
       <motion.div
+        style={{ y: y2, scale, rotateX, rotateY }}
+        className="perspective-1000 absolute inset-0 z-0"
+      >
+        <motion.div
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.03, y: 22 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.95, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          className="relative h-full w-full"
+        >
+          <motion.div
+            animate={reduceMotion ? undefined : {
+              y: [0, -10, 0],
+              rotateX: [-1.2, 1.2, -1.2],
+              rotateY: [-1.6, 1.6, -1.6],
+            }}
+            transition={reduceMotion ? undefined : {
+              duration: 11,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="hero-video-stage relative h-full w-full overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-accent-blue/10 blur-[120px] opacity-60" />
+            <div className="relative h-full w-full overflow-hidden">
+              <video
+                src={heroVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="hero-crt-video absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(74,144,226,0.14),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.74)_0%,rgba(0,0,0,0.45)_34%,rgba(0,0,0,0.18)_58%,rgba(0,0,0,0.62)_100%)]" />
+              <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-4 py-4 md:px-7 md:py-7">
+                <div className="space-y-2 md:space-y-2.5">
+                  <div className="font-mono text-[6px] tracking-[0.34em] text-accent-blue/65 uppercase md:text-[8px] md:tracking-[0.48em]">{copy.stable}</div>
+                  <div className="flex gap-1">
+                    {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                      <div key={i} className="h-1 w-4 rounded-full bg-accent-blue/20" />
+                    ))}
+                  </div>
+                  <div className="font-mono text-[6px] tracking-[0.24em] text-white/32 uppercase md:text-[7px] md:tracking-[0.34em]">{copy.hardwareId}</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <div className="absolute top-1/2 right-[16%] h-[70vw] w-[70vw] -translate-y-1/2 rounded-full border border-white/[0.02] pointer-events-none md:h-[44rem] md:w-[44rem]" />
+        <div className="absolute top-1/2 right-[16%] h-[52vw] w-[52vw] -translate-y-1/2 rounded-full border border-white/[0.04] pointer-events-none md:h-[32rem] md:w-[32rem]" />
+      </motion.div>
+
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 md:px-6 lg:grid-cols-12 lg:gap-14"
+        className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-6"
       >
-        <motion.div style={{ y: y1, opacity }} className="z-10 lg:col-span-7">
+        <motion.div style={{ y: y1, opacity }} className="z-10">
           <motion.div
             variants={containerVariants}
             className="max-w-[40rem] space-y-5 md:space-y-8"
@@ -102,59 +156,6 @@ export const Hero = ({ copy }: HeroProps) => {
               </p>
             </motion.div>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          style={{ y: y2, scale, rotateX, rotateY }}
-          className="perspective-1000 relative flex justify-center lg:col-span-5 lg:justify-end"
-        >
-          <motion.div
-            initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.03, y: 22 }}
-            animate={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.95, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full"
-          >
-            <motion.div
-              animate={reduceMotion ? undefined : {
-                y: [0, -10, 0],
-                rotateX: [-1.2, 1.2, -1.2],
-                rotateY: [-1.6, 1.6, -1.6],
-              }}
-              transition={reduceMotion ? undefined : {
-                duration: 11,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="hero-video-stage relative ml-auto aspect-[4/5] w-[min(24rem,88vw)] overflow-hidden md:w-[min(40rem,84vw)] lg:w-[min(43rem,38vw)]"
-            >
-              <div className="absolute inset-0 rounded-[1.4rem] bg-accent-blue/10 blur-[80px] opacity-60 md:rounded-[2rem] md:blur-[90px]" />
-              <div className="relative h-full w-full overflow-hidden rounded-[1rem] md:rounded-[1.25rem]">
-                <video
-                  src={heroVideo}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className="hero-crt-video absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-4 py-4 md:px-7 md:py-7">
-                  <div className="space-y-2 md:space-y-2.5">
-                    <div className="font-mono text-[6px] tracking-[0.34em] text-accent-blue/65 uppercase md:text-[8px] md:tracking-[0.48em]">{copy.stable}</div>
-                    <div className="flex gap-1">
-                      {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                        <div key={i} className="h-1 w-4 rounded-full bg-accent-blue/20" />
-                      ))}
-                    </div>
-                    <div className="font-mono text-[6px] tracking-[0.24em] text-white/32 uppercase md:text-[7px] md:tracking-[0.34em]">{copy.hardwareId}</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-white/[0.02] rounded-full pointer-events-none -z-20 scale-[1.2]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-white/[0.04] rounded-full pointer-events-none -z-20" />
         </motion.div>
       </motion.div>
 
