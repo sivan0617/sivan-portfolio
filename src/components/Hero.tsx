@@ -11,6 +11,7 @@ export const Hero = ({ copy }: HeroProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const frameRef = useRef<number | null>(null);
   const reduceMotion = useReducedMotion();
+  const introStart = reduceMotion ? 1 : 0.08;
   const [introUnlocked, setIntroUnlocked] = useState(Boolean(reduceMotion));
   const heroVideo = `${import.meta.env.BASE_URL}hero/crt-computer-screen.mp4`;
 
@@ -21,7 +22,7 @@ export const Hero = ({ copy }: HeroProps) => {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const introProgress = useMotionValue(reduceMotion ? 1 : 0);
+  const introProgress = useMotionValue(introStart);
 
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
