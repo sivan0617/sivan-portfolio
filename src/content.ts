@@ -182,7 +182,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "按你本地的品牌分类收拢后，这一组完整放品牌系统、包装延展、空间应用和饰品宣发静帧。",
-          image: asset("/portfolio/kuang/cover.jpg"),
+          image: asset("/portfolio/kuang/folder-cover.jpg"),
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
             asset("/portfolio/kuang/logo-system.jpg"),
@@ -298,7 +298,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "这里按你本地实验短片文件夹归并，放的是已经成型的动态实验、概念片和可直接代表气质的片段。",
-          image: asset("/portfolio/experimental/crowd-digitized.jpg"),
+          image: asset("/portfolio/experimental/archive-sheet.jpg"),
           clips: [
             {
               title: "飞船起飞 POV",
@@ -349,6 +349,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           ],
           gallery: [
             asset("/portfolio/experimental/crt-threshold.jpg"),
+            asset("/portfolio/experimental/archive-sheet.jpg"),
             asset("/portfolio/experimental/error-quarantine.jpg"),
             asset("/portfolio/experimental/paper-collapse.jpg"),
             asset("/portfolio/experimental/cyber-train.jpg"),
@@ -364,27 +365,9 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/experimental/wasteland-dome.jpg"),
             asset("/portfolio/experimental/illustrated-reader.jpg"),
             asset("/portfolio/experimental/starship-silhouette.jpg"),
-            asset("/portfolio/experimental/archive-sheet.jpg"),
             asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
             asset("/portfolio/video-station-cover.png"),
-          ],
-        },
-        {
-          slug: "starship-pov",
-          titleLines: ["动效", "参考"],
-          title: "动效参考",
-          category: "动效参考",
-          year: "2025",
-          description:
-            "这个条目专门留给你文件夹里的动效参考，先用现有参考帧和系统画面归档，不再额外塞重视频。",
-          image: asset("/portfolio/experimental/crt-threshold.jpg"),
-          gallery: [
-            asset("/portfolio/experimental/crt-threshold.jpg"),
-            asset("/portfolio/experimental/archive-sheet.jpg"),
-            asset("/portfolio/experimental/astronaut-terminal.jpg"),
-            asset("/portfolio/experimental/error-quarantine.jpg"),
-            asset("/portfolio/experimental/paper-collapse.jpg"),
           ],
         },
         {
@@ -511,7 +494,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     archive: {
       title: "作品档案",
       intro:
-        "现在按你本地整理后的分类展开：品牌设计、宣发片、比赛项目、实验短片、动效参考和海报分类都各自归档。",
+        "现在按你本地整理后的分类展开：品牌设计、宣发片、比赛项目、实验短片和海报分类都各自归档。",
       openCase: "进入项目",
       backHome: "返回首页",
     },
@@ -593,7 +576,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2026",
           description:
             "Re-grouped to match your local brand folder, this project now holds the full KUANG system: identity, packaging, spatial applications, and jewelry promo stills.",
-          image: asset("/portfolio/kuang/cover.jpg"),
+          image: asset("/portfolio/kuang/folder-cover.jpg"),
           gallery: [
             asset("/portfolio/kuang/intro.jpg"),
             asset("/portfolio/kuang/logo-system.jpg"),
@@ -709,7 +692,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           year: "2025",
           description:
             "Grouped to match your local experimental-film folder, this section keeps the formed motion studies, concept cuts, and strongest style fragments in one place.",
-          image: asset("/portfolio/experimental/crowd-digitized.jpg"),
+          image: asset("/portfolio/experimental/archive-sheet.jpg"),
           clips: [
             {
               title: "Starship Lift-Off POV",
@@ -760,6 +743,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
           ],
           gallery: [
             asset("/portfolio/experimental/crt-threshold.jpg"),
+            asset("/portfolio/experimental/archive-sheet.jpg"),
             asset("/portfolio/experimental/error-quarantine.jpg"),
             asset("/portfolio/experimental/paper-collapse.jpg"),
             asset("/portfolio/experimental/cyber-train.jpg"),
@@ -775,27 +759,9 @@ export const siteContent: Record<Locale, SiteCopy> = {
             asset("/portfolio/experimental/wasteland-dome.jpg"),
             asset("/portfolio/experimental/illustrated-reader.jpg"),
             asset("/portfolio/experimental/starship-silhouette.jpg"),
-            asset("/portfolio/experimental/archive-sheet.jpg"),
             asset("/portfolio/optimized/video-starship-pov-cover.jpg"),
             asset("/portfolio/video-sci-fi-city.jpeg"),
             asset("/portfolio/video-station-cover.png"),
-          ],
-        },
-        {
-          slug: "starship-pov",
-          titleLines: ["Motion", "Reference"],
-          title: "Motion Reference",
-          category: "Motion Reference",
-          year: "2025",
-          description:
-            "This entry is reserved for the motion-reference folder, using existing reference stills and system frames instead of adding extra heavy video files.",
-          image: asset("/portfolio/experimental/crt-threshold.jpg"),
-          gallery: [
-            asset("/portfolio/experimental/crt-threshold.jpg"),
-            asset("/portfolio/experimental/archive-sheet.jpg"),
-            asset("/portfolio/experimental/astronaut-terminal.jpg"),
-            asset("/portfolio/experimental/error-quarantine.jpg"),
-            asset("/portfolio/experimental/paper-collapse.jpg"),
           ],
         },
         {
@@ -923,7 +889,7 @@ export const siteContent: Record<Locale, SiteCopy> = {
     archive: {
       title: "Work Archive",
       intro:
-        "The archive now follows the folders you organised locally: brand design, promo films, competition work, experimental shorts, motion reference, and poster categories.",
+        "The archive now follows the folders you organised locally: brand design, promo films, competition work, experimental shorts, and poster categories.",
       openCase: "Open Project",
       backHome: "Back Home",
     },

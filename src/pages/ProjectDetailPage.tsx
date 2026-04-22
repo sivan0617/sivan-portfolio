@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { PageTransitionShell } from "../components/PageTransitionShell";
 import { RevealBlock } from "../components/RevealBlock";
@@ -7,6 +8,43 @@ import { getProjectBySlug, type ProjectClip, type SiteCopy } from "../content";
 interface ProjectDetailPageProps {
   copy: SiteCopy;
 }
+
+interface MediaFrameProps {
+  video?: string;
+  poster: string;
+  alt: string;
+  className: string;
+  eager?: boolean;
+}
+
+const MediaFrame = ({ video, poster, alt, className, eager = false }: MediaFrameProps) => {
+  const [videoFailed, setVideoFailed] = useState(false);
+
+  if (!video || videoFailed) {
+    return (
+      <img
+        src={poster}
+        alt={alt}
+        loading={eager ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={eager ? "high" : "auto"}
+        className={className}
+      />
+    );
+  }
+
+  return (
+    <video
+      src={video}
+      poster={poster}
+      controls
+      playsInline
+      preload="metadata"
+      onError={() => setVideoFailed(true)}
+      className={className}
+    />
+  );
+};
 
 export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
   const { slug } = useParams();
@@ -82,25 +120,13 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
 
         <RevealBlock offset={18} scale={1.02}>
           <div className="relative overflow-hidden rounded-[2px] bg-black os-panel-shadow">
-            {primaryClip?.video ? (
-              <video
-                src={primaryClip.video}
-                poster={heroPoster}
-                controls
-                playsInline
-                preload="none"
-                className="w-full aspect-[4/5] object-cover md:aspect-[16/8]"
-              />
-            ) : (
-              <img
-                src={heroImage}
-                alt={project.title}
-                loading="eager"
-                decoding="async"
-                fetchPriority="high"
-                className="w-full aspect-[4/5] object-cover md:aspect-[16/8]"
-              />
-            )}
+            <MediaFrame
+              video={primaryClip?.video}
+              poster={primaryClip?.video ? heroPoster : heroImage}
+              alt={project.title}
+              eager
+              className="w-full aspect-[4/5] object-cover md:aspect-[16/8]"
+            />
             <div className="absolute inset-0 bg-black/10 pointer-events-none" />
             <div className="absolute bottom-4 left-4 font-mono text-[7px] uppercase tracking-[0.28em] text-white/35 md:bottom-8 md:left-8 md:text-[8px] md:tracking-[0.42em]">
               {copy.work.sequenceFrame} // {project.year}
@@ -153,12 +179,10 @@ export const ProjectDetailPage = ({ copy }: ProjectDetailPageProps) => {
                       ) : null}
                     </div>
                     {clip.video ? (
-                      <video
-                        src={clip.video}
+                      <MediaFrame
+                        video={clip.video}
                         poster={clip.poster ?? project.image}
-                        controls
-                        playsInline
-                        preload="none"
+                        alt={clip.title}
                         className="w-full aspect-[4/5] object-cover md:aspect-[16/8]"
                       />
                     ) : (
