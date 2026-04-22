@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { AboutContact } from "../components/AboutContact";
-import { ArchiveTransition } from "../components/ArchiveTransition";
 import { Hero } from "../components/Hero";
 import { PageTransitionShell } from "../components/PageTransitionShell";
 import { WorkSection } from "../components/WorkSection";
@@ -31,10 +30,7 @@ export const HomePage = ({ copy }: HomePageProps) => {
   return (
     <PageTransitionShell className="relative">
       <section id="home">
-        <Hero copy={copy.hero} />
-      </section>
-      <section>
-        <ArchiveTransition projects={copy.work.projects} />
+        <Hero copy={copy.hero} projects={copy.work.projects} />
       </section>
       <section>
         <WorkSection copy={copy.work} />

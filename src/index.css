@@ -153,23 +153,41 @@
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
   }
 
-  .archive-paper-card {
-    box-shadow:
-      0 22px 60px -30px rgba(0, 0, 0, 0.9),
-      0 0 0 1px rgba(255, 255, 255, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5);
-    transition:
-      transform 220ms var(--ease-archive),
-      box-shadow 220ms var(--ease-archive),
-      background-color 220ms var(--ease-archive);
+  .archive-paper-link {
+    display: block;
   }
 
-  .archive-paper-card:hover {
-    transform: translateY(-6px);
+  .archive-paper-print {
+    mix-blend-mode: multiply;
+    opacity: 0.92;
+    filter: saturate(0.88) contrast(1.08) brightness(0.94);
     box-shadow:
-      0 28px 72px -34px rgba(0, 0, 0, 0.96),
-      0 0 0 1px rgba(255, 255, 255, 0.14),
-      inset 0 1px 0 rgba(255, 255, 255, 0.62);
+      0 10px 30px -18px rgba(0, 0, 0, 0.34),
+      inset 0 0 0 1px rgba(10, 10, 10, 0.08);
+    transition:
+      transform 220ms var(--ease-archive),
+      filter 220ms var(--ease-archive),
+      opacity 220ms var(--ease-archive),
+      box-shadow 220ms var(--ease-archive);
+  }
+
+  .archive-paper-print::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 26%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.08), transparent 34%);
+  }
+
+  .archive-paper-link:hover .archive-paper-print {
+    transform: translateY(-4px);
+    opacity: 0.98;
+    filter: saturate(0.94) contrast(1.1) brightness(0.92);
+    box-shadow:
+      0 16px 36px -20px rgba(0, 0, 0, 0.46),
+      inset 0 0 0 1px rgba(10, 10, 10, 0.1);
   }
 }
 
@@ -214,6 +232,12 @@
 
   .archive-hover-frame,
   .archive-hover-frame:hover {
+    transition: none;
+    transform: none;
+  }
+
+  .archive-paper-print,
+  .archive-paper-link:hover .archive-paper-print {
     transition: none;
     transform: none;
   }
