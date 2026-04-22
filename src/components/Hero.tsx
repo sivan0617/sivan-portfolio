@@ -96,7 +96,7 @@ export const Hero = ({ copy }: HeroProps) => {
                 loop
                 playsInline
                 preload="metadata"
-                className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[70%_center] lg:object-[73%_center] lg:scale-[1.05]"
+                className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-[82%_center] lg:object-[86%_center] xl:object-[88%_center] scale-[1.08] lg:scale-[1.12]"
               />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(74,144,226,0.14),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.84)_0%,rgba(0,0,0,0.56)_32%,rgba(0,0,0,0.18)_57%,rgba(0,0,0,0.64)_100%)]" />
               <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black via-black/60 to-transparent px-4 py-4 md:px-7 md:py-7">
@@ -114,8 +114,8 @@ export const Hero = ({ copy }: HeroProps) => {
           </motion.div>
         </motion.div>
 
-        <div className="absolute top-1/2 right-[16%] h-[70vw] w-[70vw] -translate-y-1/2 rounded-full border border-white/[0.02] pointer-events-none md:h-[44rem] md:w-[44rem]" />
-        <div className="absolute top-1/2 right-[16%] h-[52vw] w-[52vw] -translate-y-1/2 rounded-full border border-white/[0.04] pointer-events-none md:h-[32rem] md:w-[32rem]" />
+        <div className="absolute top-1/2 right-[8%] h-[70vw] w-[70vw] -translate-y-1/2 rounded-full border border-white/[0.02] pointer-events-none md:right-[6%] md:h-[44rem] md:w-[44rem]" />
+        <div className="absolute top-1/2 right-[8%] h-[52vw] w-[52vw] -translate-y-1/2 rounded-full border border-white/[0.04] pointer-events-none md:right-[6%] md:h-[32rem] md:w-[32rem]" />
       </motion.div>
 
       <motion.div
