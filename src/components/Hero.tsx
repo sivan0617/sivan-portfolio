@@ -11,9 +11,11 @@ export const Hero = ({ copy }: HeroProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const frameRef = useRef<number | null>(null);
   const reduceMotion = useReducedMotion();
-  const introStart = reduceMotion ? 1 : 0.08;
+  const introStart = reduceMotion ? 0.96 : 0.08;
+  const introEnd = 0.985;
   const [introUnlocked, setIntroUnlocked] = useState(Boolean(reduceMotion));
   const heroVideo = `${import.meta.env.BASE_URL}hero/crt-computer-screen.mp4`;
+  const heroPoster = `${import.meta.env.BASE_URL}hero/crt-computer-screen-poster.png`;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -47,7 +49,8 @@ export const Hero = ({ copy }: HeroProps) => {
 
     const syncVideoToProgress = () => {
       if (!video.duration || Number.isNaN(video.duration)) return;
-      const targetTime = Math.min(introProgress.get(), 1) * video.duration;
+      const normalizedProgress = Math.min(Math.max(introProgress.get(), introStart), introEnd);
+      const targetTime = normalizedProgress * video.duration;
 
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
@@ -208,9 +211,10 @@ export const Hero = ({ copy }: HeroProps) => {
                 <video
                   ref={videoRef}
                   src={heroVideo}
+                  poster={heroPoster}
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   className="hero-crt-video absolute inset-0 h-full w-full object-cover object-[76%_center] md:object-[80%_center] lg:object-[83%_center] xl:object-[85%_center]"
                 />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(74,144,226,0.14),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.84)_0%,rgba(0,0,0,0.56)_32%,rgba(0,0,0,0.18)_57%,rgba(0,0,0,0.64)_100%)]" />
