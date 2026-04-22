@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useReducedMotion } from "motion/react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import type { SiteCopy } from "../content";
 
 interface HeroProps {
@@ -11,6 +11,7 @@ export const Hero = ({ copy }: HeroProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const frameRef = useRef<number | null>(null);
   const reduceMotion = useReducedMotion();
+  const [introUnlocked, setIntroUnlocked] = useState(Boolean(reduceMotion));
   const heroVideo = `${import.meta.env.BASE_URL}hero/crt-computer-screen.mp4`;
 
   const { scrollYProgress } = useScroll({
@@ -20,6 +21,7 @@ export const Hero = ({ copy }: HeroProps) => {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const introProgress = useMotionValue(reduceMotion ? 1 : 0);
 
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
@@ -42,9 +44,9 @@ export const Hero = ({ copy }: HeroProps) => {
     const video = videoRef.current;
     if (!video) return;
 
-    const syncVideoToScroll = () => {
+    const syncVideoToProgress = () => {
       if (!video.duration || Number.isNaN(video.duration)) return;
-      const targetTime = Math.min(scrollYProgress.get() * 2, 1) * video.duration;
+      const targetTime = Math.min(introProgress.get(), 1) * video.duration;
 
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
@@ -59,12 +61,12 @@ export const Hero = ({ copy }: HeroProps) => {
 
     const handleLoadedMetadata = () => {
       video.pause();
-      syncVideoToScroll();
+      syncVideoToProgress();
     };
 
     video.pause();
     video.addEventListener("loadedmetadata", handleLoadedMetadata);
-    const unsubscribe = scrollYProgress.on("change", syncVideoToScroll);
+    const unsubscribe = introProgress.on("change", syncVideoToProgress);
 
     return () => {
       unsubscribe();
@@ -73,7 +75,80 @@ export const Hero = ({ copy }: HeroProps) => {
         cancelAnimationFrame(frameRef.current);
       }
     };
-  }, [scrollYProgress]);
+  }, [introProgress]);
+
+  useEffect(() => {
+    if (introUnlocked || reduceMotion) return;
+
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+    const prevBodyTouchAction = body.style.touchAction;
+    let touchStartY = 0;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.touchAction = "none";
+
+    const stepIntro = (delta: number) => {
+      const current = introProgress.get();
+      const next = Math.min(1, Math.max(0, current + delta / 1800));
+      introProgress.set(next);
+
+      if (next >= 0.999) {
+        introProgress.set(1);
+        setIntroUnlocked(true);
+      }
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      const delta = Math.sign(event.deltaY) * Math.min(Math.abs(event.deltaY), 160);
+      stepIntro(delta);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const forwardKeys = ["ArrowDown", "PageDown", " ", "Enter"];
+      const backwardKeys = ["ArrowUp", "PageUp"];
+
+      if (forwardKeys.includes(event.key)) {
+        event.preventDefault();
+        stepIntro(140);
+      } else if (backwardKeys.includes(event.key)) {
+        event.preventDefault();
+        stepIntro(-140);
+      }
+    };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY = event.touches[0]?.clientY ?? 0;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      const currentY = event.touches[0]?.clientY ?? touchStartY;
+      const delta = touchStartY - currentY;
+      touchStartY = currentY;
+      event.preventDefault();
+      stepIntro(delta);
+    };
+
+    window.scrollTo({ top: 0, behavior: "auto" });
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("keydown", handleKeyDown, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: false });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
+      body.style.touchAction = prevBodyTouchAction;
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, [introProgress, introUnlocked, reduceMotion]);
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
